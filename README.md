@@ -12,3 +12,4 @@ pip install -r requirements.txt
 ## group 생성 
 python manage.py creategroup
     
+
