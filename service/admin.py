@@ -1,10 +1,5 @@
 from django.contrib import admin
-from service.models import ReportContent, Report, HelpQuestion, HelpAnswer, Inquiry, Reply
-
-
-class HelpAnswerInline(admin.StackedInline):
-    model = HelpAnswer
-    extra = 0
+from service.models import ReportContent, Report, Help, Inquiry, Reply
 
 
 class ReplyInline(admin.StackedInline):
@@ -14,7 +9,8 @@ class ReplyInline(admin.StackedInline):
 
 class ReportContentAdmin(admin.ModelAdmin):
     fieldsets = (
-        (None, {'fields': ('category', 'user', 'content')}),
+        (None, {'fields': ('user',)}),
+        ('Content', {'fields': ('category', 'content')}),
         ('Belong to', {'fields': ['belong_to']}),
     )
     list_display = ['category', 'content', 'belong_to', 'user', 'update_date']
@@ -24,17 +20,14 @@ class ReportContentAdmin(admin.ModelAdmin):
 class ReportAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {'fields': ['user']}),
-        ('Category', {'fields': ('channel', 'video', 'comment')}),
-        ('Content', {'fields': ['content']}),
+        ('Content', {'fields': ('category', 'content')}),
     )
-    list_display = ['user', 'channel', 'video', 'comment', 'content', 'create_date']
-    list_filter = ('channel', 'video', 'comment')
+    list_display = ['user', 'category', 'create_date']
+    list_filter = ['category']
 
-
-class HelpQuestionAdmin(admin.ModelAdmin):
-    inlines = [HelpAnswerInline]
+class HelpAdmin(admin.ModelAdmin):
     fieldsets = (
-        (None, {'fields': ('question', 'user',)}),
+        (None, {'fields': ('question', 'content', 'user')}),
         ('Belong to', {'fields': ['belong_to']}),
     )
     list_display = ['question', 'user', 'update_date']
@@ -51,6 +44,6 @@ class InquiryAdmin(admin.ModelAdmin):
 
 admin.site.register(ReportContent, ReportContentAdmin)
 admin.site.register(Report, ReportAdmin)
-admin.site.register(HelpQuestion, HelpQuestionAdmin)
+admin.site.register(Help, HelpAdmin)
 admin.site.register(Inquiry, InquiryAdmin)
 

@@ -6,6 +6,8 @@ from django.dispatch import receiver
 from django.db.models.signals import post_delete
 
 
+# -------------------- 채널 --------------------
+
 class Channel(models.Model):
     CHOICES_CATEGORY = (
         (None, _('Category')),
@@ -45,6 +47,8 @@ class Channel(models.Model):
         return self.name
 
 
+# -------------------- 비디오--------------------
+
 class Video(models.Model):
     # 1(Channel) : N(Video)
     channel = models.ForeignKey(Channel, on_delete=models.CASCADE, related_name='vod_channel_videos', verbose_name=_('Channel'))
@@ -69,6 +73,8 @@ class Video(models.Model):
     def __str__(self):
         return self.title
 
+
+# -------------------- 댓글 --------------------
 
 class Comment(models.Model):
     # 1(User 시청자, 진행자) : N(Comment)
@@ -97,6 +103,8 @@ class Comment(models.Model):
     def __str__(self):
         return self.content[0:70]
 
+
+# -------------------- handler --------------------
 
 # 채널 배경 이미지 삭제
 @receiver(post_delete, sender=Channel)

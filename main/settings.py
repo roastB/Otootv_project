@@ -58,9 +58,9 @@ INSTALLED_APPS = [
     'vod.apps.VodConfig',
     'notice.apps.NoticeConfig',
     'service.apps.ServiceConfig',
+
     'phonenumber_field',
-    'ckeditor',
-    'ckeditor_uploader',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -152,26 +152,16 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-CKEDITOR_UPLOAD_PATH = "uploads"
-CKEDITOR_ALLOW_NONIMAGE_FILES = False
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Custom',
-        'toolbar_Custom':[
-            ['Font', 'FontSize'],
-            ['TextColor', 'BGColor'],
-            ['list', 'indent', 'blocks', 'align', 'bidi'],
-            ['NumberedList', 'BulletedList' '-',
-                     'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-
-            ['basicstyles', 'cleanup'],
-            ['Bold', 'Italic', 'Underline', 'Strike'],
-            ['Image', 'Table', 'HorizontalRule', 'SpecialChar'],
-            ['Link', 'Unlink', 'Anchor'],
-            [ 'Source'],
-        ]
-    }
+SUMMERNOTE_CONFIG = {
+    'summernote': {
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+    ]},
 }
-
-
-AWS_QUERYSTRING_AUTH = False

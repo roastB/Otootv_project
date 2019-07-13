@@ -13,6 +13,8 @@ from django.dispatch import receiver
 from django.db.models.signals import post_delete
 
 
+# -------------------- User --------------------
+
 class UserManager(BaseUserManager):
     use_in_migrations = True
 
@@ -96,6 +98,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name_plural = _('Users')
         ordering = ['date_joined']
 
+    #  장고 제공 함수 / 삭제 가능
     def __str__(self):
         return self.username
 
@@ -128,6 +131,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.like_videos.count()
 
 
+# -------------------- 구독 --------------------
+
 class Subscribe(models.Model):
     # 1(User 시청자) : 1(Subscribe)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_user_subscribe', verbose_name=_('User'))
@@ -155,6 +160,8 @@ class Subscribe(models.Model):
         self.user.groups.remove((Group.objects.get(name='시청자')))
         super(Subscribe, self).delete(*args, **kwargs)
 
+
+# -------------------- handler --------------------
 
 # 프로필 이미지 삭제
 @receiver(post_delete, sender=User)
