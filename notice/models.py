@@ -44,3 +44,7 @@ def notice_delete_handler(sender, **kwargs):
             storage, path = result.file.storage, result.file.path
             storage.delete(path)
             result.delete()
+
+
+
+

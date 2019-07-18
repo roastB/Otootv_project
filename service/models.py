@@ -64,14 +64,14 @@ class Report(models.Model):
 class Help(models.Model):
     # 1(User 관리자) : N(HelpQuestion)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True,
-                             related_name='service_owner_helpquestions', verbose_name=_('Staff User'))
+                             related_name='service_owner_helps', verbose_name=_('Staff User'))
 
     question = models.CharField(_('Question'), max_length=100)
     content = summer_fields.SummernoteTextField(verbose_name=_('Content'), blank=True)
     update_date = models.DateTimeField(_('Update Date'), auto_now=True)
 
     belong_to = models.ForeignKey("self", null=True, blank=True, on_delete=models.CASCADE,
-                                  related_name='service_belong_to_helpquestions',  verbose_name=_('Belong To'))
+                                  related_name='service_belong_to_helpS',  verbose_name=_('Belong To'))
 
     class Meta:
         verbose_name = _('Help')
