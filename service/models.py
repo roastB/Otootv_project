@@ -1,8 +1,7 @@
 from django.db import models
-from vod.models import Channel, Video, Comment
 
-from django_summernote.models import AbstractAttachment, Attachment
 from django_summernote import fields as summer_fields
+from django_summernote.models import Attachment
 
 from django.dispatch import receiver
 from django.db.models.signals import post_delete

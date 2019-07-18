@@ -1,5 +1,5 @@
 from django.db import models
-from django_summernote.models import AbstractAttachment, Attachment
+from django_summernote.models import Attachment
 from django_summernote import fields as summer_fields
 
 from django.dispatch import receiver
