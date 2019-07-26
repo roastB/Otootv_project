@@ -1,5 +1,6 @@
 from django.contrib import admin
-from vod.models import Channel, Video, Comment
+from vod.models import Channel, Video, Comment, Category
+
 
 # Register your models here.
 
@@ -12,11 +13,11 @@ class VideoInline(admin.StackedInline):
 class ChannelAdmin(admin.ModelAdmin):
     inlines = [VideoInline]
     fieldsets = (
-        (None, {'fields': ('category', 'name', 'user', 'description' )}),
+        (None, {'fields': ('category1', 'category2', 'category3', 'name', 'user', 'description' )}),
         ('Background image', {'fields': ['background_image']}),
     )
-    list_display = ( 'category', 'name', 'user', 'create_date', 'get_count_subscribe_channel')
-    list_filter = ['category']
+    list_display = ( 'category1', 'name', 'user', 'create_date', 'get_count_subscribe_channel')
+    list_filter = ['category1','category2','category3']
 
 
 class VideoAdmin(admin.ModelAdmin):

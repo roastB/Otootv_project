@@ -1,4 +1,5 @@
 from django.db import models
+from vod.models import Video, Comment
 
 from django_summernote import fields as summer_fields
 from django_summernote.models import Attachment
@@ -12,66 +13,59 @@ from django.utils.translation import ugettext_lazy as _
 
 
 # -------------------- 신고 --------------------
-
-class ReportContent(models.Model):
-    CHOICES_CATEGORY = (
-        (None, _('Category')),
-        ('Channel', _('Channel')),
-        ('Video', _('Video')),
-        ('Comment', _('Comment')),
+class VideoReport(models.Model):
+    Category = (
+        ('1', _('신고내용1')),
+        ('2', _('신고내용2')),
     )
-    category = models.CharField(_('Category'), max_length=7, choices=CHOICES_CATEGORY)
-    # 1(User 관리자) : N(ReportContent)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True,
-                             related_name='service_owner_reportcontents', verbose_name=_('Staff User'))
-    content = models.CharField(_('Title'), max_length=100)
-    update_date = models.DateTimeField(_('Update Date'), auto_now=True)
 
-    belong_to = models.ForeignKey("self", null=True, blank=True, on_delete=models.CASCADE,
-                                  related_name='service_belong_to_reportcontents', verbose_name=_('Belong To'))
-
-    class Meta:
-        verbose_name = _('Report Content')
-        verbose_name_plural = _('Report Contents')
-
-    def __str__(self):
-        return self.content
-
-
-class Report(models.Model):
-    category = models.CharField(_('Category'), max_length=7, blank=True)
-    # 1(User 시청자. 진행자(채널 주인) : N(Report)
+    # 1(User 시청자) : M(Report)       #신고 하는사람
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
-                             related_name='service_user_reports', verbose_name=_('User'))
-    # 1(ReportContent) : N(Report)
-    content = models.ForeignKey(ReportContent, on_delete=models.CASCADE,
-                                related_name='service_content_reports', verbose_name=_('Content'))
+                                  related_name='service_user_videoreports', verbose_name=_('User'))
+    # 1(Video) : M(Report)                             #신고 비디오
+    video = models.ForeignKey(Video, on_delete=models.CASCADE, related_name='service_video_videoreports',
+                                    verbose_name=_('Video'))
+    category = models.CharField(_('Category'),  choices=Category, max_length=20)
+    content = models.CharField(_('Content'),max_length=50, blank=True)
     create_date = models.DateTimeField(_('Create Date'), auto_now_add=True)
 
     class Meta:
-        verbose_name = _('Report')
-        verbose_name_plural = _('Reports')
+        verbose_name = _(' Video Report')
+        verbose_name_plural = _(' Video Reports')
         ordering = ['-create_date']
 
-    # category 자동 추가
-    def save(self, *args, **kwargs):
-        self.category = self.content.category
-        super(Report, self).save(*args, **kwargs)
 
+class CommentReport(models.Model):
+    Category = (
+        ('1', _('신고내용1')),
+        ('2', _('신고내용2')),
+    )
+
+    # 1(User 시청자. 진행자(채널 주인) : M(Report)       #신고 하는사람
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+                                  related_name='service_user_commentreports', verbose_name=_('User'))
+    # 1(Comment) : M(Report)                             #신고 댓글
+    comment = models.ForeignKey(Comment, on_delete=models.CASCADE, related_name='service_comment_commentreports',
+                                    verbose_name=_('Comment'))
+    category = models.CharField(_('Category'), choices=Category, max_length=20)
+    content = models.CharField(_('Content'), max_length=50, blank=True)
+    create_date = models.DateTimeField(_('Create Date'), auto_now_add=True)
+
+    class Meta:
+        verbose_name = _('Comment Report')
+        verbose_name_plural = _('Comment Reports')
+        ordering = ['-create_date']
 
 # -------------------- 도움말 --------------------
 
-class Help(models.Model):
-    # 1(User 관리자) : N(HelpQuestion)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True,
-                             related_name='service_owner_helps', verbose_name=_('Staff User'))
 
+class Help(models.Model):
     question = models.CharField(_('Question'), max_length=100)
     content = summer_fields.SummernoteTextField(verbose_name=_('Content'), blank=True)
     update_date = models.DateTimeField(_('Update Date'), auto_now=True)
 
     belong_to = models.ForeignKey("self", null=True, blank=True, on_delete=models.CASCADE,
-                                  related_name='service_belong_to_helpS',  verbose_name=_('Belong To'))
+                                  related_name='service_belong_to_helps',  verbose_name=_('Belong To'))
 
     class Meta:
         verbose_name = _('Help')
@@ -105,7 +99,7 @@ class Inquiry(models.Model):
 
 
 class Reply(models.Model):
-    # 1(User 관리자) : 1(Reply)
+    # 1(User 관리자) : N(Reply)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True,
                              related_name='service_user_replies',  verbose_name=_('Staff User'))
     # 1(Inquiry) : 1(Reply)
