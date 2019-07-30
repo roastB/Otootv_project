@@ -1,0 +1,473 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-30 08:06+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\main\settings.py:138 .\vod\models.py:31 .\vod\models.py:39
+#: .\vod\models.py:48
+msgid "English"
+msgstr ""
+
+#: .\main\settings.py:139 .\vod\models.py:32 .\vod\models.py:40
+#: .\vod\models.py:49
+msgid "Korean"
+msgstr ""
+
+#: .\notice\models.py:15 .\service\models.py:86 .\vod\models.py:135
+msgid "Title"
+msgstr ""
+
+#: .\notice\models.py:18
+msgid "Staff user"
+msgstr ""
+
+#: .\notice\models.py:19 .\service\models.py:29 .\service\models.py:51
+#: .\service\models.py:64 .\service\models.py:87 .\service\models.py:109
+#: .\vod\models.py:164
+msgid "Content"
+msgstr ""
+
+#: .\notice\models.py:20 .\service\models.py:88 .\vod\models.py:139
+msgid "Views"
+msgstr ""
+
+#: .\notice\models.py:21 .\service\models.py:30 .\service\models.py:52
+#: .\service\models.py:89 .\vod\models.py:140 .\vod\models.py:165
+msgid "Create Date"
+msgstr ""
+
+#: .\notice\models.py:22 .\service\models.py:90 .\service\models.py:110
+#: .\vod\models.py:141 .\vod\models.py:166
+msgid "Update date"
+msgstr ""
+
+#: .\notice\models.py:25
+msgid "Notice"
+msgstr ""
+
+#: .\notice\models.py:26
+msgid "Notices"
+msgstr ""
+
+#: .\service\models.py:18 .\service\models.py:40
+msgid "신고내용1"
+msgstr ""
+
+#: .\service\models.py:19 .\service\models.py:41
+msgid "신고내용2"
+msgstr ""
+
+#: .\service\models.py:24 .\service\models.py:46 .\service\models.py:84
+#: .\user\models.py:97 .\user\models.py:138 .\vod\models.py:103
+msgid "User"
+msgstr ""
+
+#: .\service\models.py:27 .\vod\models.py:137 .\vod\models.py:144
+#: .\vod\models.py:163
+msgid "Video"
+msgstr ""
+
+#: .\service\models.py:28 .\service\models.py:50 .\vod\models.py:81
+msgid "Category"
+msgstr ""
+
+#: .\service\models.py:33
+msgid " Video Report"
+msgstr ""
+
+#: .\service\models.py:34
+msgid " Video Reports"
+msgstr ""
+
+#: .\service\models.py:49 .\vod\models.py:161 .\vod\models.py:171
+msgid "Comment"
+msgstr ""
+
+#: .\service\models.py:55
+msgid "Comment Report"
+msgstr ""
+
+#: .\service\models.py:56
+msgid "Comment Reports"
+msgstr ""
+
+#: .\service\models.py:63
+msgid "Question"
+msgstr ""
+
+#: .\service\models.py:65
+msgid "Update Date"
+msgstr ""
+
+#: .\service\models.py:68
+msgid "Belong To"
+msgstr ""
+
+#: .\service\models.py:71 .\service\models.py:72
+msgid "Help"
+msgstr ""
+
+#: .\service\models.py:93 .\service\models.py:107
+msgid "Inquire"
+msgstr ""
+
+#: .\service\models.py:94
+msgid "Inquires"
+msgstr ""
+
+#: .\service\models.py:104
+msgid "Staff User"
+msgstr ""
+
+#: .\service\models.py:113 .\vod\models.py:168
+msgid "Reply"
+msgstr ""
+
+#: .\service\models.py:114
+msgid "Replies"
+msgstr ""
+
+#: .\user\forms.py:11
+msgid "The two password fields didn't match."
+msgstr ""
+
+#: .\user\forms.py:13
+msgid "Password"
+msgstr ""
+
+#: .\user\forms.py:14
+msgid "Password confirmation"
+msgstr ""
+
+#: .\user\forms.py:15
+msgid "Enter the same password as above, for verification."
+msgstr ""
+
+#: .\user\models.py:25
+msgid "The given id must be set"
+msgstr ""
+
+#: .\user\models.py:45
+msgid "Id"
+msgstr ""
+
+#: .\user\models.py:46
+msgid ""
+"Required. 30 characters or fewer. Letters, digits and blank. /+/-/_ only."
+msgstr ""
+
+#: .\user\models.py:47
+msgid "Enter a valid id."
+msgstr ""
+
+#: .\user\models.py:48
+msgid "A user with that id already exists."
+msgstr ""
+
+#: .\user\models.py:49
+msgid "First name"
+msgstr ""
+
+#: .\user\models.py:50
+msgid "Last name"
+msgstr ""
+
+#: .\user\models.py:51
+msgid "Date of birth"
+msgstr ""
+
+#: .\user\models.py:53 .\user\models.py:56
+msgid "Gender"
+msgstr ""
+
+#: .\user\models.py:54
+msgid "Male"
+msgstr ""
+
+#: .\user\models.py:55
+msgid "Female"
+msgstr ""
+
+#: .\user\models.py:57
+msgid "Email"
+msgstr ""
+
+#: .\user\models.py:58
+msgid "A user with that email already exists."
+msgstr ""
+
+#: .\user\models.py:59
+msgid "Phone number"
+msgstr ""
+
+#: .\user\models.py:60
+msgid "Profile image"
+msgstr ""
+
+#: .\user\models.py:63
+msgid "Address 1"
+msgstr ""
+
+#: .\user\models.py:64
+msgid "Street address, P.O box, company name, c/o"
+msgstr ""
+
+#: .\user\models.py:65
+msgid "Address 2"
+msgstr ""
+
+#: .\user\models.py:66
+msgid "Apartment, suite, unit, building, floor"
+msgstr ""
+
+#: .\user\models.py:67
+msgid "City"
+msgstr ""
+
+#: .\user\models.py:68
+msgid "State/Province/Region"
+msgstr ""
+
+#: .\user\models.py:69
+msgid "ZIP"
+msgstr ""
+
+#: .\user\models.py:70
+msgid "City/Region"
+msgstr ""
+
+#: .\user\models.py:73
+msgid "Bank Name"
+msgstr ""
+
+#: .\user\models.py:74
+msgid "Account Holder"
+msgstr ""
+
+#: .\user\models.py:75
+msgid "Account Number"
+msgstr ""
+
+#: .\user\models.py:77
+msgid "Staff Status"
+msgstr ""
+
+#: .\user\models.py:78
+msgid "Active"
+msgstr ""
+
+#: .\user\models.py:79
+msgid "Date Join"
+msgstr ""
+
+#: .\user\models.py:83
+msgid "Subscription Channel"
+msgstr ""
+
+#: .\user\models.py:86
+msgid "Liked Video"
+msgstr ""
+
+#: .\user\models.py:89
+msgid "Liked Comment"
+msgstr ""
+
+#: .\user\models.py:98
+msgid "Users"
+msgstr ""
+
+#: .\user\models.py:139
+msgid "Subscription Create Date"
+msgstr ""
+
+#: .\user\models.py:140
+msgid "Subscription Expire Date"
+msgstr ""
+
+#: .\user\models.py:143
+msgid "Subscription"
+msgstr ""
+
+#: .\user\models.py:144
+msgid "Subscriptions"
+msgstr ""
+
+#: .\vod\models.py:14
+msgid "Education"
+msgstr ""
+
+#: .\vod\models.py:15
+msgid "Travel"
+msgstr ""
+
+#: .\vod\models.py:16
+msgid "Game"
+msgstr ""
+
+#: .\vod\models.py:17
+msgid "Shopping"
+msgstr ""
+
+#: .\vod\models.py:18
+msgid "Fitness"
+msgstr ""
+
+#: .\vod\models.py:23
+msgid "Elementary School"
+msgstr ""
+
+#: .\vod\models.py:24
+msgid "Middle School"
+msgstr ""
+
+#: .\vod\models.py:25
+msgid "High school"
+msgstr ""
+
+#: .\vod\models.py:26
+msgid "Sky Castle"
+msgstr ""
+
+#: .\vod\models.py:27
+msgid "General"
+msgstr ""
+
+#: .\vod\models.py:33 .\vod\models.py:41 .\vod\models.py:50
+msgid "Math"
+msgstr ""
+
+#: .\vod\models.py:34 .\vod\models.py:42 .\vod\models.py:51
+msgid "Science"
+msgstr ""
+
+#: .\vod\models.py:35 .\vod\models.py:44 .\vod\models.py:54 .\vod\models.py:61
+#: .\vod\models.py:71 .\vod\models.py:78
+msgid "Etc"
+msgstr ""
+
+#: .\vod\models.py:58
+msgid "TOEIC"
+msgstr ""
+
+#: .\vod\models.py:59
+msgid "TOEFL"
+msgstr ""
+
+#: .\vod\models.py:60
+msgid "TEPS"
+msgstr ""
+
+#: .\vod\models.py:67
+msgid "North America"
+msgstr ""
+
+#: .\vod\models.py:68
+msgid "South America"
+msgstr ""
+
+#: .\vod\models.py:69
+msgid "Europe"
+msgstr ""
+
+#: .\vod\models.py:70
+msgid "Australia"
+msgstr ""
+
+#: .\vod\models.py:76
+msgid "clothing"
+msgstr ""
+
+#: .\vod\models.py:77
+msgid "Accessories"
+msgstr ""
+
+#: .\vod\models.py:83
+msgid "Education Level"
+msgstr ""
+
+#: .\vod\models.py:84
+msgid "Elementary School Course"
+msgstr ""
+
+#: .\vod\models.py:85
+msgid "Middle School Course"
+msgstr ""
+
+#: .\vod\models.py:86
+msgid "High School Course"
+msgstr ""
+
+#: .\vod\models.py:87
+msgid "General Course"
+msgstr ""
+
+#: .\vod\models.py:89
+msgid "Country"
+msgstr ""
+
+#: .\vod\models.py:90
+msgid "Shopping Category"
+msgstr ""
+
+#: .\vod\models.py:97
+msgid "Category 1"
+msgstr ""
+
+#: .\vod\models.py:98
+msgid "Category 2"
+msgstr ""
+
+#: .\vod\models.py:99
+msgid "Category 3"
+msgstr ""
+
+#: .\vod\models.py:101
+msgid "Name"
+msgstr ""
+
+#: .\vod\models.py:104 .\vod\models.py:136
+msgid "Description"
+msgstr ""
+
+#: .\vod\models.py:105
+msgid "Background Image"
+msgstr ""
+
+#: .\vod\models.py:106
+msgid "Channel Create Date"
+msgstr ""
+
+#: .\vod\models.py:122 .\vod\models.py:134
+msgid "Channel"
+msgstr ""
+
+#: .\vod\models.py:123
+msgid "Channels"
+msgstr ""
+
+#: .\vod\models.py:138
+msgid "Video URL"
+msgstr ""
+
+#: .\vod\models.py:145
+msgid "Videos"
+msgstr ""
+
+#: .\vod\models.py:172
+msgid "Comments"
+msgstr ""
