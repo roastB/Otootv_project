@@ -86,7 +86,7 @@ class Category(forms.Form):
     Edu_Lev_High3 = forms.ChoiceField(label=_("High School Course"), choices=Edu_Lev_High3, widget=forms.RadioSelect())
     Edu_Lev_General3 = forms.ChoiceField(label=_("General Course"), choices=Edu_Lev_General3, widget=forms.RadioSelect())
 
-    Tra_Country2 = forms.ChoiceField(label=_("Travel Country"), choices=Tra_Country2, widget=forms.RadioSelect())
+    Tra_Country2 = forms.ChoiceField(label=_("Country"), choices=Tra_Country2, widget=forms.RadioSelect())
     Sho_Category = forms.ChoiceField(label=_("Shopping Category"),choices=Sho_Category, widget=forms.RadioSelect())
 
 
@@ -94,9 +94,9 @@ class Category(forms.Form):
 
 class Channel(models.Model):
 
-    category1 = models.CharField(_('Category1'), max_length=5)
-    category2 = models.CharField(_('Category2'), max_length=5, blank=True)
-    category3 = models.CharField(_('Category3'), max_length=5, blank=True)
+    category1 = models.CharField(_('Category 1'), max_length=5)
+    category2 = models.CharField(_('Category 2'), max_length=5, blank=True)
+    category3 = models.CharField(_('Category 3'), max_length=5, blank=True)
 
     name = models.CharField(_('Name'), max_length=100)
     # 1(User 진행자) : N(Channel)
@@ -115,8 +115,8 @@ class Channel(models.Model):
 
     # 구독 개수
     @property
-    def get_count_subscribe_channel(self):
-        return self.user_subscribe_channels_users.count()
+    def get_count_subscription_channel(self):
+        return self.user_subscription_channels_users.count()
 
     class Meta:
         verbose_name = _('Channel')

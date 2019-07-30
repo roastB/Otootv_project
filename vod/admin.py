@@ -16,7 +16,7 @@ class ChannelAdmin(admin.ModelAdmin):
         (None, {'fields': ('category1', 'category2', 'category3', 'name', 'user', 'description' )}),
         ('Background image', {'fields': ['background_image']}),
     )
-    list_display = ( 'category1', 'name', 'user', 'create_date', 'get_count_subscribe_channel')
+    list_display = ( 'category1', 'name', 'user', 'create_date', 'get_count_subscription_channel')
     list_filter = ['category1','category2','category3']
 
 

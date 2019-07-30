@@ -22,7 +22,7 @@ class UserManager(BaseUserManager):
                      password, is_staff, is_superuser, **extra_fields):
         now = timezone.now()
         if not username:
-            raise ValueError(_('The given username must be set'))
+            raise ValueError(_('The given id must be set'))
         email = self.normalize_email(email)
         user = self.model(username=username, first_name=first_name, last_name=last_name,
                           date_of_birth=date_of_birth, gender=gender, email=email,
@@ -43,9 +43,9 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(_('Id'), max_length=30, unique=True,
-                                help_text=_('Required. 30 characters or fewer. Letters, digits and ''./+/-/_ only.'),
-                                validators=[validators.RegexValidator(r'^[\w.+-]+$', _('Enter a valid username.'), 'invalid')],
-                                error_messages={'unique': _("A user with that username already exists.")})
+                                help_text=_('Required. 30 characters or fewer. Letters, digits and blank. /+/-/_ only.'),
+                                validators=[validators.RegexValidator(r'^[\w.+-]+$', _('Enter a valid id.'), 'invalid')],
+                                error_messages={'unique': _("A user with that id already exists.")})
     first_name = models.CharField(_('First name'), max_length=30)
     last_name = models.CharField(_('Last name'), max_length=150)
     date_of_birth = models.DateField(_('Date of birth'),null=True)
@@ -80,13 +80,13 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     # 채널 구독
     # N(User 시청자) : M(Channel)
-    subscribe_channels = models.ManyToManyField(Channel, blank=True, related_name='user_subscribe_channels_users', verbose_name=_('Subscribe Channel'))
+    subscription_channels = models.ManyToManyField(Channel, blank=True, related_name='user_subscription_channels_users', verbose_name=_('Subscription Channel'))
     # 좋아요 비디오
     # N(User 시청자, 진행자(own)) : M(Video)
-    like_videos = models.ManyToManyField(Video, blank=True, related_name='user_like_videos_users', verbose_name=_('Like Video'))
+    like_videos = models.ManyToManyField(Video, blank=True, related_name='user_like_videos_users', verbose_name=_('Liked Video'))
     # 좋아요 댓글
     # N(User 시청자, 진행자(own)) : M(Comment)
-    like_comments = models.ManyToManyField(Comment, blank=True, related_name='user_like_comments_users', verbose_name=_('Like Comment'))
+    like_comments = models.ManyToManyField(Comment, blank=True, related_name='user_like_comments_users', verbose_name=_('Liked Comment'))
 
     objects = UserManager()
 
@@ -122,8 +122,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     # 채널 구독 개수
     @property
-    def get_count_subscribe_channels(self):
-        return self.subscribe_channels.count()
+    def get_count_subscription_channels(self):
+        return self.subscription_channels.count()
 
     # 좋아요 비디오 개수
     @property
@@ -133,34 +133,32 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 # -------------------- 구독 --------------------
 
-class Subscribe(models.Model):
-    # 1(User 시청자) : 1(Subscribe)
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_user_subscribe', verbose_name=_('User'))
-    subscribe_create_date = models.DateTimeField(_('Subscribe Create Date'), default=timezone.now)
-    subscribe_expire_date = models.DateTimeField(_('Subscribe Expire Date'), blank=True)
+class Subscription(models.Model):
+    # 1(User 시청자) : 1(Subscription)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='user_user_subscription', verbose_name=_('User'))
+    subscription_create_date = models.DateTimeField(_('Subscription Create Date'), default=timezone.now)
+    subscription_expire_date = models.DateTimeField(_('Subscription Expire Date'), blank=True)
 
     class Meta:
-        verbose_name = _('Subscribe')
-        verbose_name_plural = _('Subscribes')
-        ordering = ['subscribe_expire_date']
+        verbose_name = _('Subscription')
+        verbose_name_plural = _('Subscriptions')
+        ordering = ['subscription_expire_date']
 
     # 구독 시 시청자 그룹에 자동 추가
     def save(self, *args, **kwargs):
         if not self.id:
-            self.subscribe_expire_date = self.subscribe_create_date + timezone.timedelta(days=30)
+            self.subscription_expire_date = self.subscription_create_date + timezone.timedelta(days=30)
             try:
                 group = Group.objects.get(name='시청자')
             except Group.DoesNotExist:
                 print("Execute the 'python manage.py create_groups'")
             self.user.groups.add(group)
-        super(Subscribe, self).save(*args, **kwargs)
+        super( Subscription, self).save(*args, **kwargs)
 
     # 구독 만기 시 시청자 그룹에 자동 삭제
     def delete(self, *args, **kwargs):
         self.user.groups.remove((Group.objects.get(name='시청자')))
-        super(Subscribe, self).delete(*args, **kwargs)
-
-
+        super( Subscription, self).delete(*args, **kwargs)
 # -------------------- handler --------------------
 
 # 프로필 이미지 삭제

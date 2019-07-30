@@ -11,5 +11,10 @@ pip install -r requirements.txt
 
 ## group 생성 
 python manage.py creategroup
-    
+
+##언어 생생
+ python manage.py makemessages -l ko
+ python manage.py makemessages -l en
+ python manage.py compilemessages
+
 

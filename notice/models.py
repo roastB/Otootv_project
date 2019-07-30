@@ -15,7 +15,7 @@ class Notice(models.Model):
     title = models.CharField(_('Title'),  max_length=100)
     # 1(User 관리자) : N(Notice)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True,
-                             related_name='notice_owner_notices', verbose_name=_('Staff Name'))
+                             related_name='notice_owner_notices', verbose_name=_('Staff user'))
     content = summer_fields.SummernoteTextField(verbose_name=_('Content'))
     views = models.PositiveIntegerField(_('Views'), default=0)
     create_date = models.DateTimeField(_('Create Date'), auto_now_add=True)
