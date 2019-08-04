@@ -11,7 +11,7 @@ class UsersAdmin(UserAdmin):
         ('Personal info', {'fields': ('first_name', 'last_name','date_of_birth', 'gender', 'email','phone_number')}),
         ('Address', {'fields': ('address1', 'address2', 'city', 'state_province_region', 'zip', 'city_region')}),
         ('Account', {'fields': ('bank_name', 'account_number', 'account_holder')}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        ('Permissions', {'fields': ('is_active', 'is_creator', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('subscription', {'fields': ('subscription_channels', 'like_videos', 'like_comments')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )

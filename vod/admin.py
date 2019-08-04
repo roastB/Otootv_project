@@ -1,6 +1,8 @@
 from django.contrib import admin
 from vod.models import Channel, Video, Comment, Category
-
+from treebeard.admin import TreeAdmin
+from treebeard.forms import movenodeform_factory
+from .models import Category
 
 # Register your models here.
 
@@ -9,20 +11,22 @@ class VideoInline(admin.StackedInline):
     model = Video
     extra = 0
 
+class CategoryAdmin(TreeAdmin):
+    form = movenodeform_factory(Category)
+
 
 class ChannelAdmin(admin.ModelAdmin):
     inlines = [VideoInline]
     fieldsets = (
-        (None, {'fields': ('category1', 'category2', 'category3', 'name', 'user', 'description' )}),
+        (None, {'fields': ('category', 'name', 'user', 'description' )}),
         ('Background image', {'fields': ['background_image']}),
     )
-    list_display = ( 'category1', 'name', 'user', 'create_date', 'get_count_subscription_channel')
-    list_filter = ['category1','category2','category3']
+    list_display = ('category', 'name', 'user', 'create_date', 'get_count_subscription_channel')
 
 
 class VideoAdmin(admin.ModelAdmin):
     fieldsets = (
-        (None, {'fields': ('channel', 'title', 'description')}),
+        (None, {'fields': ('channel', 'user', 'title', 'description')}),
         ('Video', {'fields': ('video', 'video_url')}),
         ('Views', {'fields': ['views']}),
     )
@@ -40,3 +44,4 @@ class CommentAdmin(admin.ModelAdmin):
 admin.site.register(Channel, ChannelAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(Category, CategoryAdmin)

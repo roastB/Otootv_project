@@ -74,7 +74,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     account_holder = models.CharField(_('Account Holder'), max_length=180, blank=True)
     account_number = models.CharField(_('Account Number'), max_length=30, blank=True)
 
-    is_staff = models.BooleanField(_('Staff Status'), default=False)
+    is_staff = models.BooleanField(_('Staff'), default=False)
+    is_creator = models.BooleanField(_('Creator'), default=False)
     is_active = models.BooleanField(_('Active'), default=True)
     date_joined = models.DateTimeField(_('Date Join'), default=timezone.now)
 
@@ -153,7 +154,7 @@ class Subscription(models.Model):
             except Group.DoesNotExist:
                 print("Execute the 'python manage.py create_groups'")
             self.user.groups.add(group)
-        super( Subscription, self).save(*args, **kwargs)
+        super(Subscription, self).save(*args, **kwargs)
 
     # 구독 만기 시 시청자 그룹에 자동 삭제
     def delete(self, *args, **kwargs):

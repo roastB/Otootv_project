@@ -69,8 +69,8 @@ class Help(models.Model):
 
     class Meta:
         verbose_name = _('Help')
-        verbose_name_plural = _('Help')
-        verbose_name = "Help"
+        verbose_name_plural = _('Helps')
+
 
     def __str__(self):
         return self.question

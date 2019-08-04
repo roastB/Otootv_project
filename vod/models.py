@@ -2,105 +2,39 @@ from django.db import models
 from django import forms
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.models import Group
 
 from django.dispatch import receiver
 from django.db.models.signals import post_delete
 
+from django.db import models
+from treebeard.mp_tree import MP_Node
 
-# -------------------- 채널 카테고리 form--------------------
-class Category(forms.Form):
 
-    Category1 = (
-        ('edu', _('Education')),
-        ('trav', _('Travel')),
-        ('game', _('Game')),
-        ('shop', _('Shopping')),
-        ('fitn', _('Fitness'))
-    )
+# -------------------- 채널 카테고리 --------------------
+class Category(MP_Node):
+    name = models.CharField(max_length=30)
 
-    # -------------------- 교육--------------------
-    Edu_Level2 = (
-        ('elem', _('Elementary School')),
-        ('midd', _('Middle School')),
-        ('high', _('High school')),
-        ('sky', _('Sky Castle')),
-        ('genr', _('General'))
-    )
+    #node_order_by = ['name']
 
-    Edu_Lev_Elementary3 = (
-        ('eng', _('English')),
-        ('kor', _('Korean')),
-        ('math', _('Math')),
-        ('scie', _('Science')),
-        ('etc', _('Etc'))
-    )
+    class Meta:
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
 
-    Edu_Lev_Middle3 = (
-        ('eng', _('English')),
-        ('kor', _('Korean')),
-        ('math', _('Math')),
-        ('scie', _('Science')),
-        ('ssat', 'SSAT'),
-        ('etc', _('Etc'))
-    )
+    def __unicode__(self):
+        return 'Category: %s' % self.name
 
-    Edu_Lev_High3 = (
-        ('eng', _('English')),
-        ('kor', _('Korean')),
-        ('math', _('Math')),
-        ('scie', _('Science')),
-        ('sat', 'SAT'),
-        ('act', 'ACT'),
-        ('etc', _('Etc'))
-    )
-
-    Edu_Lev_General3 = (
-        ('toelc', _('TOEIC')),
-        ('toefl', _('TOEFL')),
-        ('teps', _('TEPS')),
-        ('etc', _('Etc'))
-    )
-
-    # -------------------- 여행-------------------
-
-    Tra_Country2 = (
-        ('nora', _('North America')),
-        ('soua', _('South America')),
-        ('euro', _('Europe')),
-        ('aust', _('Australia')),
-        ('etc', _('Etc'))
-    )
-
-    # -------------------- 쇼핑-------------------
-    Sho_Category = (
-            ('clo', _('clothing')),
-            ('acc', _('Accessories')),
-            ('etc', _('Etc'))
-    )
-
-    Category1 = forms.ChoiceField(label=_("Category"), choices=Category1, widget=forms.RadioSelect())
-
-    Edu_Level2 = forms.ChoiceField(label=_("Education Level"), choices=Edu_Level2, widget=forms.RadioSelect())
-    Edu_Lev_Elementary3 = forms.ChoiceField(label=_("Elementary School Course"), choices=Edu_Lev_Elementary3, widget=forms.RadioSelect())
-    Edu_Lev_Middle3 = forms.ChoiceField(label=_("Middle School Course"), choices=Edu_Lev_Middle3, widget=forms.RadioSelect())
-    Edu_Lev_High3 = forms.ChoiceField(label=_("High School Course"), choices=Edu_Lev_High3, widget=forms.RadioSelect())
-    Edu_Lev_General3 = forms.ChoiceField(label=_("General Course"), choices=Edu_Lev_General3, widget=forms.RadioSelect())
-
-    Tra_Country2 = forms.ChoiceField(label=_("Country"), choices=Tra_Country2, widget=forms.RadioSelect())
-    Sho_Category = forms.ChoiceField(label=_("Shopping Category"),choices=Sho_Category, widget=forms.RadioSelect())
-
+    def __str__(self):
+        return self.name
 
 # -------------------- 채널 -------------------
 
 class Channel(models.Model):
-
-    category1 = models.CharField(_('Category 1'), max_length=5)
-    category2 = models.CharField(_('Category 2'), max_length=5, blank=True)
-    category3 = models.CharField(_('Category 3'), max_length=5, blank=True)
-
+    # 1(Channel) : N(Category)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='vod_category_channels', verbose_name=_('Category'))
     name = models.CharField(_('Name'), max_length=100)
     # 1(User 진행자) : N(Channel)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='vod_owner_channels', verbose_name=_('User'))
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='vod_user_channels', verbose_name=_('User'))
     description = models.TextField(_('Description'), max_length=1000, blank=True)
     background_image = models.ImageField(_('Background Image'), upload_to='background_image/%Y/%m/%d', blank=True)
     create_date = models.DateTimeField(_('Channel Create Date'), auto_now_add=True)
@@ -132,6 +66,7 @@ class Channel(models.Model):
 class Video(models.Model):
     # 1(Channel) : N(Video)
     channel = models.ForeignKey(Channel, on_delete=models.CASCADE, related_name='vod_channel_videos', verbose_name=_('Channel'))
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='vod_user_videos', verbose_name=_('User') )
     title = models.CharField(_('Title'), max_length=100)
     description = models.TextField(_('Description'), max_length=1000, blank=True)
     video = models.FileField(_('Video'), upload_to='video/%Y/%m/%d', blank=True)
@@ -153,8 +88,8 @@ class Video(models.Model):
     def __str__(self):
         return self.title
 
-
 # -------------------- 댓글 --------------------
+
 
 class Comment(models.Model):
     # 1(User 시청자, 진행자) : N(Comment)

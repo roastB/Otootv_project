@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-30 08:05+0900\n"
+"POT-Creation-Date: 2019-08-04 19:29+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,17 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\main\settings.py:138 .\vod\models.py:31 .\vod\models.py:39
-#: .\vod\models.py:48
+#: .\main\settings.py:141
 msgid "English"
 msgstr "영어"
 
-#: .\main\settings.py:139 .\vod\models.py:32 .\vod\models.py:40
-#: .\vod\models.py:49
+#: .\main\settings.py:142
 msgid "Korean"
 msgstr "한국어"
 
-#: .\notice\models.py:15 .\service\models.py:86 .\vod\models.py:135
+#: .\notice\models.py:15 .\service\models.py:86 .\vod\models.py:70
 msgid "Title"
 msgstr "제목"
 
@@ -38,21 +35,21 @@ msgstr "관리자"
 
 #: .\notice\models.py:19 .\service\models.py:29 .\service\models.py:51
 #: .\service\models.py:64 .\service\models.py:87 .\service\models.py:109
-#: .\vod\models.py:164
+#: .\vod\models.py:99
 msgid "Content"
 msgstr "내용"
 
-#: .\notice\models.py:20 .\service\models.py:88 .\vod\models.py:139
+#: .\notice\models.py:20 .\service\models.py:88 .\vod\models.py:74
 msgid "Views"
 msgstr "조회수"
 
 #: .\notice\models.py:21 .\service\models.py:30 .\service\models.py:52
-#: .\service\models.py:89 .\vod\models.py:140 .\vod\models.py:165
+#: .\service\models.py:89 .\vod\models.py:75 .\vod\models.py:100
 msgid "Create Date"
 msgstr "생성 날짜"
 
 #: .\notice\models.py:22 .\service\models.py:90 .\service\models.py:110
-#: .\vod\models.py:141 .\vod\models.py:166
+#: .\vod\models.py:76 .\vod\models.py:101
 msgid "Update date"
 msgstr "수정 날짜"
 
@@ -73,16 +70,18 @@ msgid "신고내용2"
 msgstr ""
 
 #: .\service\models.py:24 .\service\models.py:46 .\service\models.py:84
-#: .\user\models.py:97 .\user\models.py:138 .\vod\models.py:103
+#: .\user\models.py:98 .\user\models.py:141 .\vod\models.py:37
+#: .\vod\models.py:69
 msgid "User"
 msgstr "사용자"
 
-#: .\service\models.py:27 .\vod\models.py:137 .\vod\models.py:144
-#: .\vod\models.py:163
+#: .\service\models.py:27 .\vod\models.py:72 .\vod\models.py:79
+#: .\vod\models.py:98
 msgid "Video"
 msgstr "동영상"
 
-#: .\service\models.py:28 .\service\models.py:50 .\vod\models.py:81
+#: .\service\models.py:28 .\service\models.py:50 .\vod\models.py:21
+#: .\vod\models.py:34
 msgid "Category"
 msgstr "종류"
 
@@ -94,7 +93,7 @@ msgstr "동영상 신고"
 msgid " Video Reports"
 msgstr "동영상 신고"
 
-#: .\service\models.py:49 .\vod\models.py:161 .\vod\models.py:171
+#: .\service\models.py:49 .\vod\models.py:96 .\vod\models.py:106
 msgid "Comment"
 msgstr "댓글"
 
@@ -118,8 +117,12 @@ msgstr "수전 날짜"
 msgid "Belong To"
 msgstr "속한것"
 
-#: .\service\models.py:71 .\service\models.py:72
+#: .\service\models.py:71
 msgid "Help"
+msgstr "도움말"
+
+#: .\service\models.py:72
+msgid "Helps"
 msgstr "도움말"
 
 #: .\service\models.py:93 .\service\models.py:107
@@ -134,7 +137,7 @@ msgstr "문의"
 msgid "Staff User"
 msgstr "관리자"
 
-#: .\service\models.py:113 .\vod\models.py:168
+#: .\service\models.py:113 .\vod\models.py:103
 msgid "Reply"
 msgstr "답글"
 
@@ -264,210 +267,89 @@ msgid "Account Number"
 msgstr "계좌번호"
 
 #: .\user\models.py:77
-msgid "Staff Status"
-msgstr "관리자 여부"
+msgid "Staff"
+msgstr "관리자"
 
 #: .\user\models.py:78
+msgid "Creator"
+msgstr "진행자"
+
+#: .\user\models.py:79
 msgid "Active"
 msgstr "개정 활성화 여부"
 
-#: .\user\models.py:79
+#: .\user\models.py:80
 msgid "Date Join"
 msgstr "개정 생성 날짜"
 
-#: .\user\models.py:83
+#: .\user\models.py:84
 msgid "Subscription Channel"
 msgstr "구독 채널"
 
-#: .\user\models.py:86
+#: .\user\models.py:87
 msgid "Liked Video"
 msgstr "좋아요한 동영상"
 
-#: .\user\models.py:89
+#: .\user\models.py:90
 msgid "Liked Comment"
 msgstr "좋아요한 댓글"
 
-#: .\user\models.py:98
+#: .\user\models.py:99
 msgid "Users"
 msgstr "사용자"
 
-#: .\user\models.py:139
+#: .\user\models.py:142
 msgid "Subscription Create Date"
 msgstr "구독 시작 날짜"
 
-#: .\user\models.py:140
+#: .\user\models.py:143
 msgid "Subscription Expire Date"
 msgstr "구독 만료 날짜"
 
-#: .\user\models.py:143
+#: .\user\models.py:146
 msgid "Subscription"
 msgstr "구독"
 
-#: .\user\models.py:144
+#: .\user\models.py:147
 msgid "Subscriptions"
 msgstr "구독"
 
-#: .\vod\models.py:14
-msgid "Education"
-msgstr "교육"
+#: .\vod\models.py:22
+msgid "Categories"
+msgstr "종류"
 
-#: .\vod\models.py:15
-msgid "Travel"
-msgstr "여행"
-
-#: .\vod\models.py:16
-msgid "Game"
-msgstr "게임"
-
-#: .\vod\models.py:17
-msgid "Shopping"
-msgstr "쇼핑"
-
-#: .\vod\models.py:18
-msgid "Fitness"
-msgstr "운동"
-
-#: .\vod\models.py:23
-msgid "Elementary School"
-msgstr "초등학교"
-
-#: .\vod\models.py:24
-msgid "Middle School"
-msgstr "중학교"
-
-#: .\vod\models.py:25
-msgid "High school"
-msgstr "고등학교"
-
-#: .\vod\models.py:26
-msgid "Sky Castle"
-msgstr "스카이캐슬"
-
-#: .\vod\models.py:27
-msgid "General"
-msgstr "일반"
-
-#: .\vod\models.py:33 .\vod\models.py:41 .\vod\models.py:50
-msgid "Math"
-msgstr "수학"
-
-#: .\vod\models.py:34 .\vod\models.py:42 .\vod\models.py:51
-msgid "Science"
-msgstr "과학"
-
-#: .\vod\models.py:35 .\vod\models.py:44 .\vod\models.py:54 .\vod\models.py:61
-#: .\vod\models.py:71 .\vod\models.py:78
-msgid "Etc"
-msgstr "기타"
-
-#: .\vod\models.py:58
-msgid "TOEIC"
-msgstr "토익"
-
-#: .\vod\models.py:59
-msgid "TOEFL"
-msgstr "토플"
-
-#: .\vod\models.py:60
-msgid "TEPS"
-msgstr "텝스"
-
-#: .\vod\models.py:67
-msgid "North America"
-msgstr "북아메리카"
-
-#: .\vod\models.py:68
-msgid "South America"
-msgstr "남아케리카"
-
-#: .\vod\models.py:69
-msgid "Europe"
-msgstr "유럽"
-
-#: .\vod\models.py:70
-msgid "Australia"
-msgstr "호주"
-
-#: .\vod\models.py:76
-msgid "clothing"
-msgstr "옷"
-
-#: .\vod\models.py:77
-msgid "Accessories"
-msgstr "악세사리"
-
-#: .\vod\models.py:83
-msgid "Education Level"
-msgstr "교육 레벨"
-
-#: .\vod\models.py:84
-msgid "Elementary School Course"
-msgstr "초등 교육 강좌"
-
-#: .\vod\models.py:85
-msgid "Middle School Course"
-msgstr "중등 교육 강좌"
-
-#: .\vod\models.py:86
-msgid "High School Course"
-msgstr "고등 교육 강좌"
-
-#: .\vod\models.py:87
-msgid "General Course"
-msgstr "일반 교육 강좌"
-
-#: .\vod\models.py:89
-msgid "Country"
-msgstr "나라"
-
-#: .\vod\models.py:90
-msgid "Shopping Category"
-msgstr "쇼핑 종류"
-
-#: .\vod\models.py:97
-msgid "Category 1"
-msgstr "종류 1"
-
-#: .\vod\models.py:98
-msgid "Category 2"
-msgstr "종류 2"
-
-#: .\vod\models.py:99
-msgid "Category 3"
-msgstr "종류 3"
-
-#: .\vod\models.py:101
+#: .\vod\models.py:35
 msgid "Name"
-msgstr "이르"
+msgstr "이름"
 
-#: .\vod\models.py:104 .\vod\models.py:136
+#: .\vod\models.py:38 .\vod\models.py:71
 msgid "Description"
 msgstr "설명"
 
-#: .\vod\models.py:105
+#: .\vod\models.py:39
 msgid "Background Image"
 msgstr "배경 이미지"
 
-#: .\vod\models.py:106
+#: .\vod\models.py:40
 msgid "Channel Create Date"
 msgstr "채널 생성 날짜"
 
-#: .\vod\models.py:122 .\vod\models.py:134
+#: .\vod\models.py:56 .\vod\models.py:68
 msgid "Channel"
 msgstr "채널"
 
-#: .\vod\models.py:123
+#: .\vod\models.py:57
 msgid "Channels"
 msgstr "채널"
 
-#: .\vod\models.py:138
+#: .\vod\models.py:73
 msgid "Video URL"
 msgstr "비디오"
 
-#: .\vod\models.py:145
+#: .\vod\models.py:80
 msgid "Videos"
 msgstr "비디오"
 
-#: .\vod\models.py:172
+#: .\vod\models.py:107
 msgid "Comments"
 msgstr "댓글"
