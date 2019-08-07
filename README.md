@@ -7,6 +7,7 @@ MariaDB :10.4
 
 ## package
 requirements.txt  
+pip freeze > requirements.txt
 pip install -r requirements.txt
 
 ## group 생성 

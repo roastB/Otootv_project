@@ -1,7 +1,15 @@
+Babel==2.6.0
+beautifulsoup4==4.7.1
+bs4==0.0.1
 Django==2.1.7
+django-crontab==0.7.1
+django-js-asset==1.2.2
 django-phonenumber-field==2.3.1
+django-summernote==0.8.11.4
+django-treebeard==4.3
 mysqlclient==1.4.2.post1
 phonenumbers==8.10.8
 Pillow==5.1.0
-django-summernote==0.8.11.4
-bs4==0.0.1
+pytz==2019.1
+soupsieve==1.9.2
+sqlparse==0.3.0
