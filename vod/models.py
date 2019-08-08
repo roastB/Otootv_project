@@ -1,11 +1,5 @@
-from django.db import models
-from django import forms
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.auth.models import Group
-
-from django.dispatch import receiver
-from django.db.models.signals import post_delete
 
 from django.db import models
 from treebeard.mp_tree import MP_Node
@@ -26,6 +20,7 @@ class Category(MP_Node):
 
     def __str__(self):
         return self.name
+
 
 # -------------------- 채널 -------------------
 
@@ -118,22 +113,3 @@ class Comment(models.Model):
     def __str__(self):
         return self.content[0:70]
 
-
-# -------------------- handler --------------------
-
-# 채널 배경 이미지 삭제
-@receiver(post_delete, sender=Channel)
-def photo_delete_handler(sender, **kwargs):
-    listing_image = kwargs['instance']
-    if listing_image.background_image:
-        storage, path = listing_image.background_image.storage, listing_image.background_image.path
-        storage.delete(path)
-
-
-# 비디오 삭제
-@receiver(post_delete, sender=Video)
-def video_delete_handler(sender, **kwargs):
-    listing_video = kwargs['instance']
-    if listing_video.video:
-        storage, path = listing_video.video.storage, listing_video.video.path
-        storage.delete(path)

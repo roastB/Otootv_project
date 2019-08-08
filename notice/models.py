@@ -1,10 +1,5 @@
 from django.db import models
-from django_summernote.models import Attachment
 from django_summernote import fields as summer_fields
-
-from django.dispatch import receiver
-from django.db.models.signals import post_delete
-from bs4 import BeautifulSoup
 
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
@@ -30,20 +25,8 @@ class Notice(models.Model):
         return self.title
 
 
-# -------------------- handler --------------------
 
-# 이미지 삭제
-@receiver(post_delete, sender=Notice)
-def notice_delete_handler(sender, **kwargs):
-    listing_notice = kwargs['instance']
-    if listing_notice.content:
-        soup = BeautifulSoup(listing_notice.content, 'html.parser')
-        for img in soup.find_all('img'):
-            src = img.get('src')
-            result = Attachment.objects.get(file=src[7:])
-            storage, path = result.file.storage, result.file.path
-            storage.delete(path)
-            result.delete()
+
 
 
 

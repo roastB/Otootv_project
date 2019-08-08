@@ -2,11 +2,6 @@ from django.db import models
 from vod.models import Video, Comment
 
 from django_summernote import fields as summer_fields
-from django_summernote.models import Attachment
-
-from django.dispatch import receiver
-from django.db.models.signals import post_delete
-from bs4 import BeautifulSoup
 
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
@@ -114,44 +109,3 @@ class Reply(models.Model):
         verbose_name_plural = _('Replies')
 
 
-# -------------------- handler --------------------
-
-# Help 이미지 삭제
-@receiver(post_delete, sender=Help)
-def service_delete_handler(sender, **kwargs):
-    listing_help = kwargs['instance']
-    if listing_help.summer_field:
-        soup = BeautifulSoup(listing_help.summer_field, 'html.parser')
-        for img in soup.find_all('img'):
-            src = img.get('src')
-            result = Attachment.objects.get(file=src[7:])
-            storage, path = result.file.storage, result.file.path
-            storage.delete(path)
-            result.delete()
-
-# Inquiry 이미지 삭제
-@receiver(post_delete, sender=Inquiry)
-def service_delete_handler(sender, **kwargs):
-    listing_inquiry = kwargs['instance']
-    if listing_inquiry.summer_field:
-        soup = BeautifulSoup(listing_inquiry.summer_field, 'html.parser')
-        for img in soup.find_all('img'):
-            src = img.get('src')
-            result = Attachment.objects.get(file=src[7:])
-            storage, path = result.file.storage, result.file.path
-            storage.delete(path)
-            result.delete()
-
-
-# Reply 이미지 삭제
-@receiver(post_delete, sender=Reply)
-def service_delete_handler(sender, **kwargs):
-    listing_reply = kwargs['instance']
-    if listing_reply.summer_field:
-        soup = BeautifulSoup(listing_reply.summer_field, 'html.parser')
-        for img in soup.find_all('img'):
-            src = img.get('src')
-            result = Attachment.objects.get(file=src[7:])
-            storage, path = result.file.storage, result.file.path
-            storage.delete(path)
-            result.delete()

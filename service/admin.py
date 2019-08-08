@@ -4,7 +4,7 @@ from service.models import VideoReport, CommentReport, Help, Inquiry, Reply
 
 class ReplyInline(admin.StackedInline):
     model = Reply
-    extra = 0
+    extra = 1
 
 
 class VideoReportAdmin(admin.ModelAdmin):

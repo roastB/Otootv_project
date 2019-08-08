@@ -9,11 +9,9 @@ from django.core.mail import send_mail
 from phonenumber_field.modelfields import PhoneNumberField
 from vod.models import Channel, Video, Comment
 
-from django.dispatch import receiver
-from django.db.models.signals import post_delete
-
 
 # -------------------- User --------------------
+
 
 class UserManager(BaseUserManager):
     use_in_migrations = True
@@ -160,13 +158,5 @@ class Subscription(models.Model):
     def delete(self, *args, **kwargs):
         self.user.groups.remove((Group.objects.get(name='시청자')))
         super( Subscription, self).delete(*args, **kwargs)
-# -------------------- handler --------------------
 
-# 프로필 이미지 삭제
-@receiver(post_delete, sender=User)
-def photo_delete_handler(sender, **kwargs):
-    listing_image = kwargs['instance']
-    if listing_image.profile_image:
-        storage, path = listing_image.profile_image.storage, listing_image.profile_image.path
-        storage.delete(path)
 
