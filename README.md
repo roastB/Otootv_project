@@ -66,8 +66,8 @@ get(node.pk).add_child(name='ETC')
 
 
 ## 라이브러리 변경
-프로젝트\venv\프로젝트\Lib\site-packages\django_summernote\modles
+프로젝트\venv\프로젝트\Lib\site-packages\django_summernote\modles  
 프로젝트\venv\프로젝트\Lib\site-packages\django_summernote\admin
 
-라이브러리 summernote attachment모델에 필드 추가필요해서 변경
+라이브러리 summernote attachment 모델에 필드 추가가 필요해서 변경 하였습니다. 
 프로젝트 lib_change 폴더안 코드, 주석 제거하고 적용 해주세요 
