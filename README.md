@@ -12,11 +12,13 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
 
+
 ## group 생성 
 현재 groupcreate 사용은 보류되어 있습니다.
 ```
 python manage.py creategroup
 ```
+
 
 ## 장고 내부 번역
 https://docs.djangoproject.com/en/2.2/topics/i18n/translation/#how-django-discovers-language-preference  
@@ -25,24 +27,29 @@ https://docs.djangoproject.com/en/2.2/topics/i18n/translation/#how-django-discov
  python manage.py makemessages -l ko  
  python manage.py makemessages -l en  
  python manage.py compilemessages
- ```
+ ```  
+ 
  
  python manage.py makemessages -l : 번역 파일 생성(계속 업데이트 가능)  
- python manage.py compilemessages : 번역 적용(세션 다시시작)
+ python manage.py compilemessages : 번역 적용(세션 다시시작)  
  
- 1. 요청 된 URL에서 언어 접두사를 찾습니다.(i18n_patterns루트 URLconf에서 함수를 사용하는 경우에만 수행된다)    
- 2.  현재 사용자 세션에서 LANGUAGE_SESSION_KEY 키를 찾습니다 .    
- 3. 쿠키를 찾습니다 (사용 된 쿠키의 이름은 LANGUAGE_COOKIE_NAME의해 설정 (기본 이름은 django_language))    
+ 
+ 1. 요청 된 URL에서 언어 접두사를 찾습니다.(i18n_patterns루트 URLconf에서 함수를 사용하는 경우에만 수행된다)  
+ 2.  현재 사용자 세션에서 LANGUAGE_SESSION_KEY 키를 찾습니다 
+ 3. 쿠키를 찾습니다 (사용 된 쿠키의 이름은 LANGUAGE_COOKIE_NAME의해 설정 (기본 이름은 django_language))  
  4. Accept-LanguageHTTP 헤더를 봅니다 .(이 헤더는 브라우저에서 전송되며 우선 순위에 따라 원하는 언어를 서버에 알려줍니다.
 Django는 사용 가능한 번역이있는 언어를 찾을 때까지 헤더의 각 언어를 시도합니다.)  
- 5. 전역 LANGUAGE_CODE설정을 사용합니다 .
+5. 전역 LANGUAGE_CODE설정을 사용합니다 .
+
 
 
  ## 모델 내용 번역 
  https://django-modeltranslation.readthedocs.io/en/latest/usage.html
  
+ 
  영어가 기본 언어
  세션이 영어면 modle field 에서 영어 호출, 한국어면 한국어 호출
+ 
  
  field 저장 -> field_ko, field_en 자동 복사 저장  
  ```
@@ -52,14 +59,17 @@ Django는 사용 가능한 번역이있는 언어를 찾을 때까지 헤더의 
  Notice.objects.create(title_en = "1", title_ko="2")  
   field=1,  field_ko=1,  field_en=2
   ```
+ 
   
  fied 내용 -> field_en 저장 명령어  
  ```
  python manage.py update_translation_fields
  ```
-
+  
+  
  ## 카테고리 생성
 django-modeltranslation을 적용해 영어 한국어 가능
+ 
  
  영어 한국어 동시 생성
  ```
@@ -113,12 +123,14 @@ get(node.pk).add_child(name='Shoes', name_ko='신발')
 get(node.pk).add_child(name='ETC', name_ko='기타')
  ```
  
+ 
 ## 라이브러리 변경
 ```
 프로젝트\venv\프로젝트\Lib\site-packages\django_summernote\modles
 프로젝트\venv\프로젝트\Lib\site-packages\django_summernote\admin
 ```
-
+ 
+ 
 라이브러리 summernote attachment 모델에 필드 추가가 필요해서 변경 하였습니다. 
 프로젝트 lib_change 폴더안 코드, 주석 제거하고 적용 해주세요 
  
