@@ -48,6 +48,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',     #맨위
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,13 +136,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
 LANGUAGES = [
     ('en', _('English')),
     ('ko', _('Korean')),
 ]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+MODELTRANSLATION_AUTO_POPULATE ='all'
+
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
+
 
 TIME_ZONE = 'Asia/Seoul'
 
@@ -156,7 +163,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS =[os.path.join(BASE_DIR, 'static'),]
+STATICFILES_DIRS =[os.path.join(BASE_DIR, 'static'), ]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -14,9 +14,8 @@ def background_image_delete_handler(sender,instance, **kwargs):
 @receiver(pre_save, sender=Channel)
 def background_image_change_delete_handler(sender, instance, **kwargs):
     if instance.pk:
-        try:
-            old_image = Channel.objects.get(pk=instance.pk).background_image
-        except Channel.DoesNotExist:
+        old_image = Channel.objects.get(pk=instance.pk).background_image
+        if not old_image:
             return
         else:
             new_image_path = instance.background_image.path
@@ -34,9 +33,9 @@ def video_delete_handler(sender,instance, **kwargs):
 @receiver(pre_save, sender=Video)
 def video_change_delete_handler(sender, instance, **kwargs):
     if instance.pk:
-        try:
-            old_video = Video.objects.get(pk=instance.pk).video
-        except Video.DoesNotExist:
+        old_video = Video.objects.get(pk=instance.pk).video
+        print(old_video)
+        if not old_video:
             return
         else:
             new_video_path = instance.video.path

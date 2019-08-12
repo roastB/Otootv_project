@@ -147,16 +147,5 @@ class Subscription(models.Model):
     def save(self, *args, **kwargs):
         if not self.id:
             self.subscription_expire_date = self.subscription_create_date + timezone.timedelta(days=30)
-            try:
-                group = Group.objects.get(name='시청자')
-            except Group.DoesNotExist:
-                print("Execute the 'python manage.py create_groups'")
-            self.user.groups.add(group)
         super(Subscription, self).save(*args, **kwargs)
-
-    # 구독 만기 시 시청자 그룹에 자동 삭제
-    def delete(self, *args, **kwargs):
-        self.user.groups.remove((Group.objects.get(name='시청자')))
-        super( Subscription, self).delete(*args, **kwargs)
-
 

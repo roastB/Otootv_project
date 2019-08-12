@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-08 22:47+0900\n"
+"POT-Creation-Date: 2019-08-13 04:20+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\main\settings.py:139
+#: .\main\settings.py:141
 msgid "English"
 msgstr ""
 
-#: .\main\settings.py:140
+#: .\main\settings.py:142
 msgid "Korean"
 msgstr ""
 
-#: .\notice\models.py:10 .\service\models.py:81 .\vod\models.py:65
+#: .\main\templates\main.html:4 .\main\templates\notice\notice_list.html:6
+msgid "test"
+msgstr ""
+
+#: .\main\templates\main.html:5
+msgid " test1 </br> test2 </br> test3 "
+msgstr ""
+
+#: .\notice\models.py:10 .\service\models.py:85 .\vod\models.py:65
 msgid "Title"
 msgstr ""
 
@@ -33,22 +41,22 @@ msgstr ""
 msgid "Staff user"
 msgstr ""
 
-#: .\notice\models.py:14 .\service\models.py:24 .\service\models.py:46
-#: .\service\models.py:59 .\service\models.py:82 .\service\models.py:104
+#: .\notice\models.py:14 .\service\models.py:26 .\service\models.py:50
+#: .\service\models.py:63 .\service\models.py:86 .\service\models.py:108
 #: .\vod\models.py:94
 msgid "Content"
 msgstr ""
 
-#: .\notice\models.py:15 .\service\models.py:83 .\vod\models.py:69
+#: .\notice\models.py:15 .\service\models.py:87 .\vod\models.py:69
 msgid "Views"
 msgstr ""
 
-#: .\notice\models.py:16 .\service\models.py:25 .\service\models.py:47
-#: .\service\models.py:84 .\vod\models.py:70 .\vod\models.py:95
+#: .\notice\models.py:16 .\service\models.py:27 .\service\models.py:51
+#: .\service\models.py:88 .\vod\models.py:70 .\vod\models.py:95
 msgid "Create Date"
 msgstr ""
 
-#: .\notice\models.py:17 .\service\models.py:85 .\service\models.py:105
+#: .\notice\models.py:17 .\service\models.py:89 .\service\models.py:109
 #: .\vod\models.py:71 .\vod\models.py:96
 msgid "Update date"
 msgstr ""
@@ -61,87 +69,79 @@ msgstr ""
 msgid "Notices"
 msgstr ""
 
-#: .\service\models.py:13 .\service\models.py:35
-msgid "신고내용1"
-msgstr ""
-
-#: .\service\models.py:14 .\service\models.py:36
-msgid "신고내용2"
-msgstr ""
-
-#: .\service\models.py:19 .\service\models.py:41 .\service\models.py:79
+#: .\service\models.py:21 .\service\models.py:45 .\service\models.py:83
 #: .\user\models.py:96 .\user\models.py:137 .\vod\models.py:32
 #: .\vod\models.py:64
 msgid "User"
 msgstr ""
 
-#: .\service\models.py:22 .\vod\models.py:67 .\vod\models.py:74
+#: .\service\models.py:24 .\vod\models.py:67 .\vod\models.py:74
 #: .\vod\models.py:93
 msgid "Video"
 msgstr ""
 
-#: .\service\models.py:23 .\service\models.py:45 .\vod\models.py:15
+#: .\service\models.py:25 .\service\models.py:49 .\vod\models.py:15
 #: .\vod\models.py:29
 msgid "Category"
 msgstr ""
 
-#: .\service\models.py:28
+#: .\service\models.py:30
 msgid " Video Report"
 msgstr ""
 
-#: .\service\models.py:29
+#: .\service\models.py:31
 msgid " Video Reports"
 msgstr ""
 
-#: .\service\models.py:44 .\vod\models.py:91 .\vod\models.py:101
+#: .\service\models.py:48 .\vod\models.py:91 .\vod\models.py:101
 msgid "Comment"
 msgstr ""
 
-#: .\service\models.py:50
+#: .\service\models.py:54
 msgid "Comment Report"
 msgstr ""
 
-#: .\service\models.py:51
+#: .\service\models.py:55
 msgid "Comment Reports"
 msgstr ""
 
-#: .\service\models.py:58
+#: .\service\models.py:62
 msgid "Question"
 msgstr ""
 
-#: .\service\models.py:60
+#: .\service\models.py:64
 msgid "Update Date"
 msgstr ""
 
-#: .\service\models.py:63
+#: .\service\models.py:67
 msgid "Belong To"
 msgstr ""
 
-#: .\service\models.py:66
+#: .\service\models.py:70
 msgid "Help"
 msgstr ""
 
-#: .\service\models.py:67
+#: .\service\models.py:71
 msgid "Helps"
 msgstr ""
 
-#: .\service\models.py:88 .\service\models.py:102
+#: .\service\models.py:92 .\service\models.py:106
 msgid "Inquire"
 msgstr ""
 
-#: .\service\models.py:89
+#: .\service\models.py:93
 msgid "Inquires"
 msgstr ""
 
-#: .\service\models.py:99
+#: .\service\models.py:103
 msgid "Staff User"
 msgstr ""
 
-#: .\service\models.py:108 .\vod\models.py:98
+#: .\service\models.py:112 .\vod\models.py:98
 msgid "Reply"
 msgstr ""
 
-#: .\service\models.py:109
+#: .\service\models.py:113
 msgid "Replies"
 msgstr ""
 

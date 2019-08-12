@@ -3,7 +3,7 @@ from vod.models import Channel, Video, Comment, Category
 from treebeard.admin import TreeAdmin
 from treebeard.forms import movenodeform_factory
 from .models import Category
-
+from modeltranslation.admin import TranslationAdmin
 # Register your models here.
 
 
@@ -11,7 +11,8 @@ class VideoInline(admin.StackedInline):
     model = Video
     extra = 0
 
-class CategoryAdmin(TreeAdmin):
+
+class CategoryAdmin(TreeAdmin, TranslationAdmin):
     form = movenodeform_factory(Category)
 
 

@@ -1,5 +1,7 @@
 from django.contrib import admin
 from service.models import VideoReport, CommentReport, Help, Inquiry, Reply
+from modeltranslation.admin import TranslationAdmin
+
 
 
 class ReplyInline(admin.StackedInline):
@@ -7,7 +9,7 @@ class ReplyInline(admin.StackedInline):
     extra = 1
 
 
-class VideoReportAdmin(admin.ModelAdmin):
+class VideoReportAdmin(TranslationAdmin):
     fieldsets = (
         (None, {'fields': ['user']}),
         ('Report_Video', {'fields': ['video']}),
@@ -17,7 +19,7 @@ class VideoReportAdmin(admin.ModelAdmin):
     list_filter = ['video', 'category']
 
 
-class CommentReportAdmin(admin.ModelAdmin):
+class CommentReportAdmin(TranslationAdmin):
     fieldsets = (
         (None, {'fields': ['user']}),
         ('Report_Video', {'fields': ['comment']}),
@@ -27,7 +29,7 @@ class CommentReportAdmin(admin.ModelAdmin):
     list_filter = ['category']
 
 
-class HelpAdmin(admin.ModelAdmin):
+class HelpAdmin(TranslationAdmin):
     fieldsets = (
         (None, {'fields': ('question', 'content')}),
         ('Belong to', {'fields': ['belong_to']}),

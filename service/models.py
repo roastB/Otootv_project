@@ -10,8 +10,10 @@ from django.utils.translation import ugettext_lazy as _
 # -------------------- 신고 --------------------
 class VideoReport(models.Model):
     Category = (
-        ('1', _('신고내용1')),
-        ('2', _('신고내용2')),
+        ('1', 'Report1'),
+        ('2', 'Report2'),
+        ('1', '신고1'),
+        ('2', '신고2'),
     )
 
     # 1(User 시청자) : M(Report)       #신고 하는사람
@@ -32,8 +34,10 @@ class VideoReport(models.Model):
 
 class CommentReport(models.Model):
     Category = (
-        ('1', _('신고내용1')),
-        ('2', _('신고내용2')),
+        ('1', 'Report1'),
+        ('2', 'Report2'),
+        ('1', '신고1'),
+        ('2', '신고2'),
     )
 
     # 1(User 시청자. 진행자(채널 주인) : M(Report)       #신고 하는사람

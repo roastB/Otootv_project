@@ -14,11 +14,12 @@ def profile_image_delete_handler(sender, instance, **kwargs):
 @receiver(pre_save, sender=User)
 def profile_image_change_delete_handler(sender, instance, **kwargs):
     if instance.pk:
-        try:
-            old_image = User.objects.get(pk=instance.pk).profile_image
-        except User.DoesNotExist:
+        old_image = User.objects.get(pk=instance.pk).profile_image
+        if not old_image:
             return
         else:
             new_image_path = instance.profile_image.path
             if old_image and old_image.path != new_image_path:
                 old_image.storage.delete(old_image.path)
+
+

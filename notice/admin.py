@@ -1,8 +1,8 @@
 from django.contrib import admin
 from notice.models import Notice
+from modeltranslation.admin import TranslationAdmin
 
-
-class NoticeAdmin(admin.ModelAdmin):
+class NoticeAdmin(TranslationAdmin):
 
     fieldsets = (
         (None, {'fields': ('title', 'user', 'content')}),
@@ -11,4 +11,4 @@ class NoticeAdmin(admin.ModelAdmin):
     list_display = ('title', 'user', 'update_date', 'views')
 
 
-admin.site.register(Notice,  NoticeAdmin)
+admin.site.register(Notice,NoticeAdmin)
