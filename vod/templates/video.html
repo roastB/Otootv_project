@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}O2TV{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static 'css/video.css'%}{% endblock %}
+
+{% block content %}
+    <!------------------------------------
+              main video 부분
+ ------------------------------------->
+    <div id="mainvideo">
+        <div class="mainvod">
+            <div class="mv">
+                <div class="thismv">
+                    <iframe src="https://www.youtube.com/embed/EdrFfkpAs8o?modestbranding=1" rel="0" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="text4">
+                    <h4>(제목) O2TV 첫 시작, 플렛폼의 혁신</h4>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comment">
+            <div class="comment_window">
+                <form>
+                    <!--form-control, btn btn-default은 추후에 수정필요-->
+                    <div class="form-group">
+                        <input type="text" class="typing" id="exampleInputEmail1" placeholder="댓글 추가..">
+                    </div>
+                    <button type="submit" class="registration">등록</button>
+                </form>
+            </div>
+                   
+            <div class="comment_list">
+
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

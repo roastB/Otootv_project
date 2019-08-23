@@ -1,0 +1,40 @@
+
+.creators {
+  width: calc(100% - 40px);
+  padding-left: 20px;
+  padding-light: 20px;
+}
+
+
+.hm{
+   width:85%;
+    height:250px;
+    transform: translate(7%,20%);
+    padding: 10px
+
+   }
+
+   .creator {
+     float: left;
+
+   }
+
+   .explain{
+    float: left;
+    width:800px;
+    height:180px;
+    text-align: left;
+    padding: 30px 0 10px 30px;
+   }
+
+    .creator a img {
+     border: 1px solid rebeccapurple;
+     color: #fff;
+     width: 200px;
+     height: 200px;
+     background-color: #97b4f3;
+     line-height: 100px;
+     border-radius: 50%;
+
+   }
+

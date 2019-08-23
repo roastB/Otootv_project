@@ -1,0 +1,49 @@
+
+/* 전체 틀에서 top,down틀 구분 */
+.contents {
+  width: calc(100% - 25px);
+  padding-left: 25px;
+}
+
+.content {
+  width:  100%;
+  padding: 20px 0 20px 0px;
+  border-top: thin solid #d3d3d3;
+}
+
+.content h2{
+  text-align: left;
+}
+
+.line {
+ display: inline-block;
+  width:  270px;
+  height: 380px;
+  padding: 20px 0 20px 0px;
+  margin-left: 25px
+
+}
+
+.vod{
+    width:  100%;
+    height: 70%;
+   background-color: #e9e9e9;
+   text-align: center;
+}
+
+.text{
+   display: inline-block;
+    width: 100%;
+    height: 30%;
+   background-color: #e9e9e9;
+   text-align: center;
+   border-top: thin solid #d3d3d3;
+}
+
+
+.vod iframe{
+    display: inline-block;
+    width:  230px;
+    height: 230px;
+    padding-top: 20px;
+}

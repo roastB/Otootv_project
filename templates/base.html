@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}O2TV{% endblock %}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    {% load staticfiles %}
+    <!-- style 연결(중요) -->
+    <link rel="stylesheet" type="text/css"c href="{% static 'css/reset.css'%}">
+    <link rel="stylesheet" type="text/css"  href="{% static 'css/base.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
+    <link rel="stylesheet" type="text/css" href="{% block extrastyle2 %}{% endblock %}" />
+    <link rel="stylesheet" type="text/css" href="{% block extrastyle3 %}{% endblock %}" />
+
+
+    <!-- 파비콘 -->
+    <!--산하님이 아이콘 짜주셔야함.-->
+    <link rel="icon" href="icon/o2-16.png" sizes="16x16">
+    <link rel="icon" href="icon/o2-32.png" sizes="32x32">
+    <link rel="icon" href="icon/o2-64.png" sizes="64x64">
+    <link rel="icon" href="icon/o2-128.png" sizes="128x128">
+
+
+    <!-- HTLM5shiv ie6~8 -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script type="text/javascript">
+        alert("현재 당신이 보는 브라우저는 지원하지 않습니다. 최신 브라우저로 업데이트해주세요!");
+     </script>
+    <![endif]-->
+</head>
+
+
+<body>
+<!------------------------------------
+    header menu (hearder부분)
+------------------------------------->
+<header id="header">
+    <div class="container">
+
+        <div class="mainicon">
+            <a href="{% url 'main' %}"><img src="{% static 'img/otootv.png'%}" alt="o2tv" /></a>
+        </div>
+
+        <div class="headmenu_searchbar">
+            <input type="text" class="searchTerm" placeholder="What are you looking for?">
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <!------------------------------------
+                    side br (aside부분)
+         ------------------------------------->
+        <input type="checkbox" id="sidebar">
+        <div class="headmenu_sidebar">
+            <aside>
+                <label for='sidebar' class='sidemenu'>
+                    <img src="{% static 'icon/hamberger.png'%}" alt="o2tv" />
+                </label>
+            </aside>
+        </div>
+        <div class="side_content">
+            <div id="side_design">
+                <div class="submenu">
+                    <ul>
+                        <li><a class="category1">교육</a>
+                            <ul class="sub1">
+                                <li><a class="category2">초등</a>
+                                    <ul class="sub2">
+                                        <li><a href="{% url 'creator' %}"
+                                               class="category3">언어</a></li>
+                                        <li><a href="#" class="category3">외국어</a></li>
+                                        <li><a href="#" class="category3">수학</a></li>
+                                        <li><a href="#" class="category3">과학</a></li>
+                                        <li><a href="#" class="category3">기타</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="category2">중등</a>
+                                    <ul class="sub2">
+                                        <li><a href="#" class="category3">언어</a></li>
+                                        <li><a href="#" class="category3">외국어</a></li>
+                                        <li><a href="#" class="category3">수학</a></li>
+                                        <li><a href="#" class="category3">과학</a></li>
+                                        <li><a href="#" class="category3">SSAT</a></li>
+                                        <li><a href="#" class="category3">기타</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="category2">고등</a>
+                                    <ul class="sub2">
+                                        <li><a href="#" class="category3">언어</a></li>
+                                        <li><a href="#" class="category3">외국어</a></li>
+                                        <li><a href="#" class="category3">수학</a></li>
+                                        <li><a href="#" class="category3">과학</a></li>
+                                        <li><a href="#" class="category3">SAT</a></li>
+                                        <li><a href="#" class="category3">ACT</a></li>
+                                        <li><a href="#" class="category3">기타</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="category2">일반</a>
+                                    <ul class="sub2">
+                                        <li><a href="#" class="category3">TOEIC</a></li>
+                                        <li><a href="#" class="category3">TOEFL</a></li>
+                                        <li><a href="#" class="category3">TEPS</a></li>
+                                        <li><a href="#" class="category3">기타</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="category2">스카이케슬</a>
+                                    <ul class="sub2">
+                                        <li><a href="#" class="category3">SubMenu1</a></li>
+                                        <li><a href="#" class="category3">SubMenu2</a></li>
+                                        <li><a href="#" class="category3">SubMenu3</a></li>
+                                        <li><a href="#" class="category3">SubMenu4</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="category1">헬스</a>
+                            <ul class="sub1">
+                                <li><a href="#">SubMenu1</a></li>
+                                <li><a href="#">SubMenu2</a></li>
+                                <li><a href="#">SubMenu3</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="category1">여행</a>
+                            <ul class="sub1">
+                                <li><a href="#">SubMenu1</a></li>
+                                <li><a href="#">SubMenu2</a></li>
+                                <li><a href="#">SubMenu3</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="category1">쇼핑</a>
+                            <ul class="sub1">
+                                <li><a href="#">SubMenu1</a></li>
+                                <li><a href="#">SubMenu2</a></li>
+                                <li><a href="#">SubMenu3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            공지사항<br>
+            문의사항<bt>
+            도우말<br>
+            즐겨찾기<bt>
+            마이페이지<br>
+            <label for="sidebar"></label>
+        </div>
+        <label for="sidebar" class="sidebackground"></label>
+    </div>
+</header>
+
+
+<!------------------------------------
+          내용
+------------------------------------->
+{% block content %}{% endblock %}
+
+
+<!------------------------------------
+          footer 부분
+------------------------------------->
+
+<div id="footer" role="footer">
+    <div class="containerfooter">
+        <div class="footer">
+            <ul>
+                <li><a href="#">사이트 도움말</a></li>
+                <li><a href="#">사이트 이용약관</a></li>
+                <li><a href="#">사이트 운영규칙</a></li>
+                <li><a href="#"><strong>개인정보취급방침</strong></a></li>
+                <li><a href="#">책임의 한계와 법적고지</a></li>
+                <li><a href="#">게시중단요청 서비스</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+            <address>
+                &copy; COPYRIGHT TO OTOOTV
+            </address>
+        </div>
+    </div>
+</div>
+
+
+
+<!------------------------------------
+        total javascript
+------------------------------------->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+        /*sub1 열리고 닫치고 (stop은 한번만 열고 닫고 slide는 부드럽게)*/
+        $(".submenu > ul > li").hover(
+            function () {
+                $(this).find(".sub1").stop().slideDown();
+            }, function () {
+                $(this).find(".sub1").stop().slideUp();
+            });
+
+
+        /*sub2 열리고 닫치고 (ul > li > ul > li 즉, 경로를 잘봐주고 작성하여 해결)*/
+        $(".submenu > ul > li > ul > li").hover(
+            function () {
+                $(this).find(".sub2").stop().slideDown();
+            }, function () {
+                $(this).find(".sub2").stop().slideUp();
+            });
+
+
+        /*header 고정*/
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 0) {
+                $('#header').addClass('h-fixed');
+            } else {
+                $('#header').removeClass('h-fixed');
+            }
+        });
+
+
+
+
+    </script>
+</body>
+
