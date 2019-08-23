@@ -1,0 +1,39 @@
+{% extends "base2.html" %}
+{% block title %}O2TV{% endblock %}
+{% load staticfiles %}
+{% block extrajs %}{% static 'js/login.js'%}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="overlay">
+   <form>
+      <!--   con = Container  for items in the form-->
+      <div class="con">
+         <!--     Start  header Content  -->
+         <header class="head-form">
+            <br>
+            <h2>결제 창</h2>
+            <!--     A welcome message or an explanation of the login form -->
+            <p>You can see plenty of videos if you subscribe now!</p>
+         </header>
+         <!--     End  header Content  -->
+         <br>
+         <div class="field-set">
+            <br>
+            <p class="agreement-info">
+               (결제를 위한 사항들 기입)결제 방식에 따라 이 창에 표기되는 내용이 달라질 예정...
+            </p>
+            <!--        buttons -->
+            <!--      button LogIn -->
+            <a  href="{% url 'subscribe_3' %}"> <button class="pay" type="button"> 결제</button></a>>
+         </div>
+         <!--   End Conrainer  -->
+      </div>
+
+      <!-- End Form -->
+   </form>
+</div>
+{% endblock %}

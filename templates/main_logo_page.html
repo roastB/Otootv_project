@@ -1,0 +1,38 @@
+{% extends "base2.html" %}
+{% block title %}O2TV{% endblock %}
+{% load staticfiles %}
+{% block extrajs %}{% static 'js/main_logo.js'%}{% endblock %}
+
+{% block head %}
+<header>
+    <input type="button" class="btn-kor" value="한국어" onmouseout="change2(this)" onmouseover="change1(this)">
+    <input type="button" class="btn-eng" value="English" onmouseout="change2(this)" onmouseover="change1(this)">
+    <!--
+    <a href="#/Korean" class="link_nochange">한국어</a>
+    <a href="#/English" class="link_nochange">English</a>
+    -->
+</header>
+{% endblock %}
+
+{% block content %}
+<div style="text-align: center">
+    <br>
+    <a href="#">
+        <img src="{% static 'img/otootv.png'%}" class="logo">
+    </a>
+    <!--
+      <div class="mat-app-background", style="text-align:center">
+      <button mat-raised-button
+            color="primary">OTOOTV</button>
+    -->
+    <br><br>
+    <a  href="{% url 'signup_1' %}"> <button type="button" class="btn-join-o2tv">Sign Up</button></a>
+    <a  href="{% url 'login_1' %}"> <button type="button" class="btn-join-o2tv">login</button></a>
+</div>
+<!--<button ng-click="new-page">회원가입</button>-->
+<!-- <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">회원가입</a></h2>-->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
+{% endblock %}

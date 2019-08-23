@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}O2TV{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static 'css/add.css'%}{% endblock %}
+
+{% block content %}
+<section>
+    <div class="help">
+<!--        <a class="btn-info" href="#noticemain" style="text-decoration: none;">도움말</a>-->
+        <!-- FAQ -->
+        <button class="accordion">Question 1</button>
+        <div class="panel">
+            <p>Answer 1</p>
+        </div>
+
+        <button class="accordion">Question 2</button>
+        <div class="panel">
+            <p>Answer 2</p>
+        </div>
+
+        <button class="accordion">Question 3</button>
+        <div class="panel">
+            <p>Answer 3</p>
+        </div>
+
+        <button class="accordion">Question 4</button>
+        <div class="panel">
+            <p>Answer 4</p>
+        </div>
+
+        <button class="accordion">Question 5</button>
+        <div class="panel">
+            <p>Answer 5</p>
+        </div>
+
+        <button class="accordion">Question 6</button>
+        <div class="panel">
+            <p>Answer 6</p>
+        </div>
+
+        <button class="accordion">Question 7</button>
+        <div class="panel">
+            <p>Answer 7</p>
+        </div>
+
+        <button class="accordion">Question 8</button>
+        <div class="panel">
+            <p>Answer 8</p>
+        </div>
+
+        <button class="accordion">Question 9</button>
+        <div class="panel">
+            <p>Answer 9</p>
+        </div>
+
+        <button class="accordion">Question 10</button>
+        <div class="panel">
+            <p>Answer 10</p>
+        </div>
+
+        <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+            });
+        }
+    </script>
+
+        <div class="table table-striped" style="text-align: center;">
+            <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">&raquo;</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+

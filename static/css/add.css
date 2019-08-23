@@ -1,0 +1,188 @@
+.help{
+    padding: 40px 40px 40px 40px;
+}
+
+textarea {
+      vertical-align: top;
+      height: 25em;
+      resize: vertical;
+  }
+  .btn {
+      padding: 2px 6px 2px 6px;
+      margin: 20px 8px 6px 8px;
+      min-width: 80px;
+      border-radius: 1.5px;
+      font-size: 13px;
+      text-align: center;
+      color: black;
+      background-color: #d3d3d3;
+  }
+
+  .btn-info {
+      padding: 10px 2px 2px 2px;
+      margin-bottom: 20px;
+      min-width: 80px;
+      border-radius: 1.5px;
+      font-size: 20px;
+      text-align: center;
+  }
+
+
+  .btn-notice {
+      padding: 2px 2px 2px 2px;
+      margin-bottom: 20px;
+      min-width: 80px;
+      border-radius: 1.5px;
+      font-size: 20px;
+      text-align: center;
+      color: grey;
+      background-color: #d3d3d3;
+  }
+
+  .btn-question {
+      padding: 2px 2px 2px 2px;
+      margin-bottom: 20px;
+      min-width: 80px;
+      border-radius: 1.5px;
+      font-size: 20px;
+      text-align: center;
+      color: grey;
+
+  }
+
+  /*  main_help_info page  */
+  /* Style the buttons that are used to open and close the accordion panel */
+  .accordion {
+      background-color: #e9e9e9;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      transition: 0.4s;
+  }
+
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+      background-color: #ccc;
+  }
+
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+  }
+
+  /*  main_help_info icon style  */
+  .accordion:after {
+      content: '\02795'; /* Unicode character for "plus" sign (+) */
+      font-size: 13px;
+      color: #777;
+      float: right;
+      margin-left: 5px;
+  }
+
+  .active:after {
+      content: "\2796"; /* Unicode character for "minus" sign (-) */
+  }
+
+  /*  pagination style  */
+  .pagination a {
+      color: black;
+      float: left;
+      padding: 8px 13px;
+      text-decoration: none;
+      transition: background-color .3s;
+  }
+
+  .pagination a.active {
+      background-color: dodgerblue;
+      color: white;
+  }
+
+  .pagination a:hover:not(.active) {
+      background-color: #ddd;
+  }
+
+  .write {
+      margin-left: 15px;
+      font-size: 25px;
+  }
+
+  .question_contents {
+      margin-left: 25px;
+      font-size: 15px;
+      height: 400px;
+      width: 600px;
+  }
+
+  .ok {
+      height: 30px;
+  }
+
+  .edit {
+      height: 30px;
+  }
+
+  .go-back {
+      height: 30px;
+  }
+
+  .write-question {
+      margin: 40px;
+  }
+
+  .question-form {
+      padding: 30px;
+      width: 600px;
+
+      font-size: 15px;
+  }
+
+  .send {
+      height: 30px;
+  }
+
+  .cancel {
+      height: 30px;
+  }
+  /*  main_change_info page  */
+  .profile {
+      float: left;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: none;
+      background-color: #7386D5;
+  }
+
+  .my-info {
+      margin: 30px;
+      float: left;
+      font-size: 15px;
+      height: 120px;
+      width: 420px;
+  }
+
+  .my-info-bottom {
+      margin-top: 10px;
+      float: left;
+      font-size: 15px;
+      height: 270px;
+      width: 600px;
+  }
+
+  .setting {
+      height: 30px;
+  }
+
+  .change-info {
+      height: 30px;
+  }
+
+

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}O2TV{% endblock %}
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/add.css"%}{% endblock %}
+{% block content %}
+
+ <section>
+    <div class="write-question">
+        <a class="btn-question" href="#writequestion" style="text-decoration: none;">문의 내용</a>
+    <form class="question-form">
+        <div>
+            <label for="title">제목: </label>
+            <input type="text" name="title" id="title" value="제목을 입력하세요.">
+        </div>
+        <div>
+<!--            <label for="content">내용: </label>-->
+<!--            <textarea name="content" id="content">문의하실 내용을 입력하세요.</textarea>-->
+            {{ form|safe }}
+        </div>
+    </form>
+    <div style="float: right; width: 260px;">
+        <button class="send">전송</button>
+        <button class="cancel">취소</button>
+    </div>
+</div>
+
+</section>
+{% endblock content %}

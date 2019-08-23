@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+<title>{% block title %}O2TV{% endblock %}</title>
+<head>
+    {% load staticfiles %}
+     <link rel="stylesheet"  type="text/css" href="{% static 'css/login_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
+    <script src="{% block extrajs %}{% endblock %}"></script>
+
+    <!-- 파비콘 -->
+
+    <link rel="icon" href="icon/o2-16.png" sizes="16x16">
+    <link rel="icon" href="icon/o2-32.png" sizes="32x32">
+    <link rel="icon" href="icon/o2-64.png" sizes="64x64">
+    <link rel="icon" href="icon/o2-128.png" sizes="128x128">
+    {% block head %}{% endblock %}
+</head>
+<body>
+{% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% extends "base2.html" %}
+{% block title %}O2TV{% endblock %}
+{% load staticfiles %}
+{% block extrajs %}{% static 'js/login.js'%}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+<script src="angular-route.js"></script>
+{% endblock %}
+
+{% block content %}
+<body ng-controller="loginCtrl">
+<div class="overlay">
+   <form>
+      <div class="con">
+         <header class="head-form">
+            <br>
+            <h2>로그인</h2>
+            <p>Login here using your username and password</p>
+            <p>뷰에서 login2</p>
+         </header>
+         <br>
+         <div class="field-set">
+            <div class="user">
+               <span class="input-item">
+                 <i class="fa fa-user-circle"></i>
+               </span>
+               <input class="form-input" id="userId" ng-model="yourId" type="text" placeholder="User Id" required>
+            </div>
+            <div class="pwd">
+               <span class="input-item">
+                  <i class="fa fa-key"></i>
+               </span>
+               <input class="form-input" id="pwd" ng-model="yourPwd" type="password" placeholder="Password"  name="password" required>
+               <span>
+                  <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye" style="height: 46px;"></i>
+               </span>
+            </div>
+            <br>
+            <button class="log-in"> Log In </button>
+         </div>
+         <div class="other">
+            <button class="btn submits frgt-pass">Forgot Password</button>
+            <a  href="{% url 'signup_1' %}"><button type="button"  class="btn submits sign-up">Sign Up
+                           <i class="fa fa-user-plus" aria-hidden="true"></i>
+            </button></a>
+         </div>
+      </div>
+   </form>
+</div>
+</body>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}O2TV{% endblock %}
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/add.css"%}{% endblock %}
+{% block content %}
+
+ <section>
+    <div style="margin: 35px 70px;">
+        <img src="{% static 'img/default_profile_image.jpg'%}" class="profile">
+        <div class="my-info">
+            <div style="width: 200px;">
+                <label for="id" style="width: 55px;">아이디: </label>
+                <input type="text" id="id">
+                
+            </div>
+            <div style="margin-top: 1.5em;">
+                <label for="password" style="width: 70px;">비밀번호:</label>
+                <input type="text" id="password">
+            </div>
+        </div>
+        <div class="my-info-bottom">
+            <div>
+                <label for="name" style="width: 40px;">이름: </label>
+                <input type="text" id="name">
+            </div>
+            <div style="margin-top: 1.5em;">
+                <label for="gender" style="width: 40px;">성별: </label>
+                <input type="text" id="gender">
+            </div>
+            <div style="margin-top: 1.5em;">
+                <label for="birthday" style="width: 70px;">생년월일: </label>
+                 <input type="text" id="birthday">
+            </div>
+            <div style="margin-top: 1.5em;">
+                <label for="email" style="width: 55px;">이메일: </label>
+                 <input type="text" id="email">
+            </div>
+            <div style="margin-top: 1.5em;">
+                <label for="phone-number" style="width: 55px;">휴대폰: </label>
+                 <input type="text" id="phone-number">
+            </div>
+        </div>
+        <br>
+        <div style="float: right; width: 550px;">
+            <button class="setting">환경설정</button>
+            <br>
+            <button class="change-info" style="margin-top: 5px;">정보수정</button>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

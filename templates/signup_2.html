@@ -1,0 +1,41 @@
+{% extends "base2.html" %}
+{% block title %}O2TV{% endblock %}
+{% load staticfiles %}
+{% block extrajs %}{% static 'js/login.js'%}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="overlay">
+    <!-- LOGN IN FORM by Omar Dsoky -->
+    <form>
+        <!--   con = Container  for items in the form-->
+        <div class="con">
+            <!--     Start  header Content  -->
+            <header class="head-form">
+                <br>
+                <h2><br>회원 가입을 <br>축하드립니다!</h2>
+                <br>
+                <!--
+                   <p style="font-size: 25px; font-weight: normal;">이제 저희 OTOOTV의 <br> 가족이 되셨습니다!</p>
+                -->
+                <!--     A welcome message or an explanation of the login form -->
+            </header>
+            <!--     End  header Content  -->
+            <br>
+            <div class="field-set">
+
+                <br><br><br>
+                <!--        buttons -->
+                 <a  href="{% url 'login_1' %}"> <button type="button" class="log-in">login</button></a>
+            </div>
+
+            <!--   End Conrainer  -->
+        </div>
+
+        <!-- End Form -->
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base2.html" %}
+{% block title %}O2TV{% endblock %}
+{% load staticfiles %}
+{% block extrajs %}{% static 'js/login.js'%}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="overlay">
+    <!-- SIGN UP FORM -->
+    <form>
+        <!--   con = Container  for items in the form-->
+        <div class="con">
+            <!--     Start  header Content  -->
+            <header class="head-form">
+                <br>
+                <h2>정보처리동의서</h2>
+                <!--     A welcome message or an explanation of the sign up form -->
+                <p>Check if you agree</p>
+            </header>
+            <!--     End  header Content  -->
+            <br>
+            <div class="field-set">
+
+                <!-- agreement content -->
+                <br>
+                <p class="agreement-info">
+                    정보처리 동의서 내용란 입니다.
+                </p>
+
+                <!-- button Agree -->
+                <div style="text-align: center;">
+                    <a  href="{% url 'subscribe_1' %}"> <button type="button" class="agree">Agree </button></a>
+                    <a  href="{% url 'main' %}"> <button type="button" class="dis-agree">나중에 </button></a>
+                </div>
+            </div>
+        </div>
+        <!-- End Form -->
+    </form>
+</div>
+{% endblock %}
