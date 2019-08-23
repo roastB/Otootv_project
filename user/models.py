@@ -117,7 +117,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         if self.profile_image:
             return self.profile_image.url
         else:
-            return '/static/image/default_profile_image.jpg'
+            return '/static/img/default_profile_image.jpg'
 
     # 채널 구독 개수
     @property

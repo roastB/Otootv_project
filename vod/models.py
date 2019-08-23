@@ -40,7 +40,7 @@ class Channel(models.Model):
         if self.background_image:
             return self.background_image.url
         else:
-            return '/static/image/default_background_image.jpg'
+            return '/static/img/default_background_image.jpg'
 
     # 구독 개수
     @property

@@ -28,8 +28,11 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
-    path('main/', views.main),
-    path('notice/', views.noticeview.as_view()),
+    path('transfer1/', views.transferview1),
+    path('transfer2/', views.transferview2.as_view()),
 
-
+    url(r'^$', views.mainView.as_view(), name='main'),
+    url('creator/', views.creatorView.as_view(), name='creator'),
+    url('channel/', views.channelView.as_view(), name='channel'),
+    url('video/', views.videoView.as_view(), name='video'),
 )
