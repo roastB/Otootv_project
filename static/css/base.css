@@ -179,7 +179,7 @@ aside label.sidemenu {
   position: fixed;
   top: 0;
   left: -300px;
-  width: 15%;
+  width: 250px;
   height: 1500px;
   background: #fff;
   transition: all .35s;
