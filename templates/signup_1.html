@@ -9,15 +9,18 @@
 
 {% block content %}
 <div class="overlay">
+    <!-- SIGN UP FORM -->
     <form>
+        <!--   con = Container  for items in the form-->
         <div class="con">
+            <!--     Start  header Content  -->
             <header class="head-form">
                 <br>
                 <h2>회원 가입</h2>
                 <!--     A welcome message or an explanation of the sign up form -->
                 <p>Type username and password to sign up</p>
-                <p>view 에서 sigin 2로 </p>
             </header>
+            <!--     End  header Content  -->
             <br>
             <div class="field-set">
 
@@ -30,19 +33,61 @@
                     <input class="form-input" id="userId" type="text" placeholder="User Id" required>
                 </div>
 
+
+                <!--  Password jquery  -->
+                <script type="text/javascript">
+                $(function(){
+                    $("#alert-success").hide();
+                    $("#alert-danger").hide();
+                    $("input").keyup(function(){
+                        var pw=$("#pw").val();
+                        var pwConf=$("#pwConf").val();
+                        if(pw != "" || pwConf != ""){
+                            if(pw == pwConf){
+                                $("#alert-success").show();
+                                $("#alert-danger").hide();
+                                $("#submit").removeAttr("disabled");
+                            }else{
+                                $("#alert-success").hide();
+                                $("#alert-danger").show();
+                                $("#submit").attr("disabled", "disabled");
+                            }
+                        }
+                    });
+                });
+            </script>
+
                 <!--   Password -->
                 <div class="pwd">
-              <span class="input-item">
-                <i class="fa fa-key"></i>
-               </span>
+                <span class="input-item">
+                    <i class="fa fa-key"></i>
+                </span>
                     <!--   Password Input-->
-                    <input class="form-input" id="pwd" type="password" placeholder="Password"  name="password" required>
+                    <input class="form-input" id="pw" name="pwd" type="password" placeholder="Password" onchange="isSame()"/>
 
                     <!--  Show/hide password  -->
                     <span>
-                <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye" style="height: 48px;"></i>
-            </span>
+                    <i class="fa fa-eye" aria-hidden="true"  type="button" class="eye" style="height: 48px;"></i>
+                </span>
                 </div>
+
+                <!--   Confirm Password   -->
+                <div class="pwd_confirm">
+                <span class="input-item">
+                    <i class="fa fa-key"></i>
+                </span>
+                    <!--   Password Input to Confirm  -->
+                    <input class="form-input" id="pwConf" name="pwdConf" type="password" placeholder="Confirm Password" onchange="isSame()"/>
+
+                    <!--  Show/hide password  -->
+                    <span>
+                    <i class="fa fa-eye" aria-hidden="true"  type="button" class="eye" style="height: 48px;"></i>
+                </span>
+                </div>
+
+<!--                <div class="alert alert-success" id="alert-success">비밀번호가 일치합니다.</div>-->
+<!--                <div class="alert alert-danger" id="alert-danger">비밀번호가 일치하지 않습니다.</div>-->
+
 
                 <!--   Name -->
                 <div class="name">
@@ -147,6 +192,7 @@
                         <option value="31">31</option>
                     </select>
                 </div>
+
                 <!--   email   -->
                 <div class="email">
                 <span class="input-item">
@@ -156,12 +202,13 @@
                     <input class="form-input" id="email" type="text" placeholder="E-mail" required/>
                 </div>
 
-                <!--        buttons -->
-                <!--      button SignUp -->
                 <button class="ok"> 확인 </button>
             </div>
+
+            <!-- End Form -->
         </div>
     </form>
 </div>
+
 
 {% endblock %}

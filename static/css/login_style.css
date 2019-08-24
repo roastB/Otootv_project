@@ -73,7 +73,7 @@
         margin: 2% auto;
         box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
         padding: 2%;
-        background-image: linear-gradient(-225deg, #CCFFFF 100%, #FFE6FA 0%);
+        background-image: linear-gradient(-225deg, #e9e9e9 100%, #FFE6FA 0%);
     }
     /* form Container */
     form .con {
@@ -111,7 +111,7 @@
 /* login form */
     .field-set {
         width: 300px;
-        height: 400px;
+        height: 450px;
     }
 
     .input-item {
@@ -122,7 +122,7 @@
     }
 
     /* Show/hide password Font Icon */
-    #eye {
+    .eye {
         background: #fff;
         color: #333;
     
