@@ -6,38 +6,72 @@
 {% block extrastyle %}{% static 'css/video.css'%}{% endblock %}
 
 {% block content %}
-    <!------------------------------------
-              main video 부분
- ------------------------------------->
-    <div id="mainvideo">
-        <div class="mainvod">
-            <div class="mv">
-                <div class="thismv">
-                    <iframe src="https://www.youtube.com/embed/EdrFfkpAs8o?modestbranding=1" rel="0" frameborder="0"
+<div id="mainvideo">
+    <div class="mainvod">
+        <div class="mv">
+            <div class="thismv">
+                <iframe src="https://www.youtube.com/embed/EdrFfkpAs8o?modestbranding=1" rel="0" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
-                </div>
-                <div class="text4">
-                    <h4>(제목) O2TV 첫 시작, 플렛폼의 혁신</h4>
-                </div>
             </div>
-        </div>
-        
-        <div class="comment">
-            <div class="comment_window">
-                <form>
-                    <!--form-control, btn btn-default은 추후에 수정필요-->
-                    <div class="form-group">
-                        <input type="text" class="typing" id="exampleInputEmail1" placeholder="댓글 추가..">
-                    </div>
-                    <button type="submit" class="registration">등록</button>
-                </form>
-            </div>
-                   
-            <div class="comment_list">
-
+            <div class="text4">
+                <h4>(제목) O2TV 첫 시작, 플렛폼의 혁신</h4>
             </div>
         </div>
     </div>
+    <!--form-control, btn btn-default은 추후에 수정필요-->
+    <!--div class="comment">
+        <div class="comment_window">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="typing" id="exampleInputEmail1" placeholder="댓글 추가..">
+                </div>
+                <button type="submit" class="registration">등록</button>
+            </form>
+        </div>
 
+        <div class="comment_list">
+
+        </div>
+    </div>-->
+    <!-- 글 불러오기 -->
+    <div id="board_read">
+        <!--- 댓글 불러오기 -->
+        <div class="reply_view">
+            <h3>댓글목록</h3>
+
+            <div class="dap_lo">
+                <div><b><?php echo $reply['name'];?></b></div>
+                <div class="dap_to comt_edit"><?php echo nl2br("$reply[content]"); ?></div>
+                <div class="rep_me dap_to"><?php echo $reply['date']; ?></div>
+                <div class="rep_me rep_menu">
+                    <a class="dat_edit_bt" href="#">수정</a>
+                    <a class="dat_delete_bt" href="#">삭제</a>
+                </div>
+                <!-- 댓글 수정 폼 dialog -->
+                <div class="dat_edit">
+                    <form method="post" action="rep_modify_ok.php">
+                        <input type="hidden" name="rno" value="<?php echo $reply['idx']; ?>" /><input type="hidden" name="b_no" value="<?php echo $bno; ?>">
+                        <input type="password" name="pw" class="dap_sm" placeholder="비밀번호" />
+                        <textarea name="content" class="dap_edit_t"><?php echo $reply['content']; ?></textarea>
+                        <input type="submit" value="수정하기" class="re_mo_bt">
+                    </form>
+                </div>
+            </div>
+            <?php } ?>
+
+            <!--- 댓글 입력 폼 -->
+            <div class="dap_ins">
+                <form method="post" class="reply_form">
+                    <input type="hidden" name="bno" value="<?php echo $bno; ?>">
+                    <div style="margin-top:10px; ">
+                        <textarea name="content" class="reply_content" id="re_content" ></textarea>
+                        <button type="suid="rep_bt" class="re_bt">댓글</button>
+                    </div>
+                </form>
+            </div>
+        </div><!--- 댓글 불러오기 끝 -->
+        <div id="foot_box"></div>
+    </div>
+</div>
 {% endblock content %}

@@ -186,3 +186,38 @@ textarea {
   }
 
 
+
+
+
+
+
+        table {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            border: thin solid #d3d3d3;
+        }
+
+        thead {
+            font-size: 15px;
+            text-align: center;
+        }
+
+        tbody {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        th, tr, td {
+            height: 35px;
+        }
+
+        /*tabel 부분 홀수 글 색상*/
+        tbody tr:nth-child(odd) td {
+            background: #e3e3e3;
+        }
+
+        /*tabel 부분 짝수 글 색상*/
+        tbody tr:nth-child(even) td {
+            background: white;
+        }

@@ -65,7 +65,7 @@ class Video(models.Model):
     title = models.CharField(_('Title'), max_length=100)
     description = models.TextField(_('Description'), max_length=1000, blank=True)
     video = models.FileField(_('Video'), upload_to='video/%Y/%m/%d', blank=True)
-    video_url = models.URLField(_('Video URL'), blank=True)
+    video_url = models.CharField(_('Video URL'),max_length=11, blank=True)
     views = models.PositiveIntegerField(_('Views'), default=0)
     create_date = models.DateTimeField(_('Create Date'), auto_now_add=True)
     update_date = models.DateTimeField(_('Update date'), auto_now=True)

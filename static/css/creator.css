@@ -1,40 +1,46 @@
-
-.creators {
-  width: calc(100% - 40px);
-  padding-left: 20px;
-  padding-light: 20px;
+.headmaker1 {
+  float: left;
+  width: 50%;
+  height: 100%;
 }
 
+.headmaker2 {
+  float: right;
+  width: 50%;
+  height: 100%;
+}
 
-.hm{
-   width:85%;
-    height:250px;
-    transform: translate(7%,20%);
-    padding: 10px
+.hm1 {
+  width: 93%;
+  height: 200px;
+  display: inline-block;
+  padding: 20px 10px 10px 20px;
 
-   }
+}
 
-   .creator {
-     float: left;
+.hm2 {
+  width: 93%;
+  height: 200px;
+  display: inline-block;
+  padding: 20px 20px 20px 20px;
+}
 
-   }
+.creator {
+  float: left;
+}
 
-   .explain{
-    float: left;
-    width:800px;
-    height:180px;
-    text-align: left;
-    padding: 30px 0 10px 30px;
-   }
+.explain {
+  display: inline-block;
+  width: 65%;
+  height: 150px;
+  text-align: left;
+  margin: 20px 0 0 10px;
+}
 
-    .creator a img {
-     border: 1px solid rebeccapurple;
-     color: #fff;
-     width: 200px;
-     height: 200px;
-     background-color: #97b4f3;
-     line-height: 100px;
-     border-radius: 50%;
-
-   }
-
+.maker {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: #97b4f3;
+  border-radius: 50%;
+}

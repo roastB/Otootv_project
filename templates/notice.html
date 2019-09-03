@@ -2,72 +2,59 @@
 {% block title %}O2TV{% endblock %}
 {% load staticfiles %}
 {% block extrastyle %}{% static "css/add.css"%}{% endblock %}
-{% block content %}
 
+{% block content %}
 
 <section>
 <!--    <a class="btn-notice">공지사항</a>-->
-        <div class="table table-striped">
-            <table class="table table-striped">
-                <thead>
-                    <tr style="text-align: center">
-                        <th>번호</th>
-                        <th>제목</th>
-                        <th>작성자</th>
-                        <th>날짜</th>
-                        <th>조회수</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr onClick="location.href='#'" style="cursor: pointer;">
-                        <td>387</td>
-                        <td>이제 곧 OTOOTV2가 나온다면서요?</td>
-                        <td>관리자</td>
-                        <td>2022.07.02</td>
-                        <td>2,927,382,919</td>
-                    </tr>
-                    <tr onClick="location.href='#'" style="cursor: pointer;">
-                        <td>251</td>
-                        <td>OTOOTV가 성공의 가도에 올랐다고 전해져..</td>
-                        <td>관리자</td>
-                        <td>2019.12.01</td>
-                        <td>32,207,672</td>
-                    </tr>
-                    <tr onClick="location.href='#'" style="cursor: pointer;">
-                        <td>103</td>
-                        <td>성공적인 OTOOTV 발대식~!~~~</td>
-                        <td>관리자</td>
-                        <td>2019.10.01</td>
-                        <td>102,673</td>
-                    </tr>
-                    <tr onClick="location.href='#'" style="cursor: pointer;">
-                        <td>27</td>
-                        <td>화이팅합시다 OTOOTV 여러분!!!</td>
-                        <td>관리자</td>
-                        <td>2019.07.28</td>
-                        <td>27</td>
-                    </tr>
-                    <tr onClick="location.href='#'" style="cursor: pointer;">
-                        <td>3</td>
-                        <td>OTOOTV 아쟈쟈아쟈쟈 뉸뉴냔ㄴㅑ냐</td>
-                        <td>관리자</td>
-                        <td>2018.12.31</td>
-                        <td>4</td>
-                    </tr>
-                </tbody>
-            </table>
-            <hr/>
-        <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">&raquo;</a>
-        </div>
-    </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>날짜</th>
+                    <th>조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onClick="location.href='#'" style="cursor: pointer;">
+                    <td>3833337</td>
+                    <td>이제 곧 OTOOTV2가 나온다면서요?</td>
+                    <td>관리자</td>
+                    <td>2022.07.02</td>
+                    <td>233,927,333</td>
+                </tr>
+                <tr onClick="location.href='#'" style="cursor: pointer;">
+                    <td>251</td>
+                    <td>OTOOTV가 성공의 가도에 올랐다고 전해져..</td>
+                    <td>관리자</td>
+                    <td>2019.12.01</td>
+                    <td>32,207,672</td>
+                </tr>
+                <tr onClick="location.href='#'" style="cursor: pointer;">
+                    <td>103</td>
+                    <td>성공적인 OTOOTV 발대식~!~~~</td>
+                    <td>관리자</td>
+                    <td>2019.10.01</td>
+                    <td>102,673</td>
+                </tr>
+                <tr onClick="location.href='#'" style="cursor: pointer;">
+                    <td>27</td>
+                    <td>화이팅합시다 OTOOTV 여러분!!!</td>
+                    <td>관리자</td>
+                    <td>2019.07.28</td>
+                    <td>27</td>
+                </tr>
+                <tr onClick="location.href='#'" style="cursor: pointer;">
+                    <td>3</td>
+                    <td>OTOOTV 아쟈쟈아쟈쟈</td>
+                    <td>관리자</td>
+                    <td>2018.12.31</td>
+                    <td>4</td>
+                </tr>
+            </tbody>
+        </table>
 </section>
-
 {% endblock content %}
 

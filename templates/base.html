@@ -70,8 +70,7 @@
                             <ul class="sub1">
                                 <li><a class="category2">초등</a>
                                     <ul class="sub2">
-                                        <li><a href="{% url 'creator' %}"
-                                               class="category3">언어</a></li>
+                                        <li><a href="{% url 'creator' %}" class="category3">언어</a></li>
                                         <li><a href="#" class="category3">외국어</a></li>
                                         <li><a href="#" class="category3">수학</a></li>
                                         <li><a href="#" class="category3">과학</a></li>
@@ -109,10 +108,6 @@
                                 </li>
                                 <li><a class="category2">스카이케슬</a>
                                     <ul class="sub2">
-                                        <li><a href="#" class="category3">SubMenu1</a></li>
-                                        <li><a href="#" class="category3">SubMenu2</a></li>
-                                        <li><a href="#" class="category3">SubMenu3</a></li>
-                                        <li><a href="#" class="category3">SubMenu4</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -138,13 +133,17 @@
                                 <li><a href="#">SubMenu3</a></li>
                             </ul>
                         </li>
+                        <li><a class="category1" , id="caca">즐겨찾기</a></li>
+                        <li><a class="category1" href="{% url 'account' %}">마이페이지</a></li>
+                        <li><a class="category1", href="{% url 'notice' %}">공지사항</a></li>
+                        <li><a class="category1">고객센터</a>
+                            <ul class="sub1">
+                                <li><a  href="{% url 'help' %}">도움말</a></li>
+                                <li><a  href="{% url 'inquiry' %}">문의게시판</a></li>
+                                <li><a href="#">방송지원</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                    <br>
-                    <a  href="{% url 'notice' %}">공지사항<br></a>
-                    <a  href="{% url 'inquiry' %}">문의<br></a>
-                    <a  href="{% url 'help' %}">도움말<br></a>
-                    즐겨찾기<br>
-                    <a  href="{% url 'account' %}">마이페이지<br></a>
                 </div>
             </div>
             <label for="sidebar"></label>
