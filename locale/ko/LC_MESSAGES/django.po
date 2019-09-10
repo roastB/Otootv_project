@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-13 04:20+0900\n"
+"POT-Creation-Date: 2019-09-07 00:27+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,21 +17,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\main\settings.py:141
+#: .\main\settings.py:141 .\templates\base.html:76
 msgid "English"
 msgstr "영어"
 
-#: .\main\settings.py:142
+#: .\main\settings.py:142 .\templates\base.html:77 .\templates\base.html:85
+#: .\templates\base.html:94
 msgid "Korean"
 msgstr "한국어"
-
-#: .\main\templates\main.html:4 .\main\templates\notice\notice_list.html:6
-msgid "test"
-msgstr "테스트"
-
-#: .\main\templates\main.html:5
-msgid " test1 </br> test2 </br> test3 "
-msgstr "테스트1 </br> 테스트2 </br> 테스트3"
 
 #: .\notice\models.py:10 .\service\models.py:85 .\vod\models.py:65
 msgid "Title"
@@ -61,13 +54,13 @@ msgstr "생성 날짜"
 msgid "Update date"
 msgstr "수정 날짜"
 
-#: .\notice\models.py:20
+#: .\notice\models.py:20  .\templates\base.html:137
 msgid "Notice"
-msgstr "공지"
+msgstr "공지사항"
 
 #: .\notice\models.py:21
 msgid "Notices"
-msgstr "공지"
+msgstr "공지사항"
 
 #: .\service\models.py:21 .\service\models.py:45 .\service\models.py:83
 #: .\user\models.py:96 .\user\models.py:137 .\vod\models.py:32
@@ -117,7 +110,7 @@ msgstr "수전 날짜"
 msgid "Belong To"
 msgstr "속한것"
 
-#: .\service\models.py:70
+#: .\service\models.py:70 .\templates\base.html:140
 msgid "Help"
 msgstr "도움말"
 
@@ -127,11 +120,11 @@ msgstr "도움말"
 
 #: .\service\models.py:92 .\service\models.py:106
 msgid "Inquire"
-msgstr "문의"
+msgstr "문의사항"
 
 #: .\service\models.py:93
 msgid "Inquires"
-msgstr "문의"
+msgstr "문의사항"
 
 #: .\service\models.py:103
 msgid "Staff User"
@@ -144,6 +137,147 @@ msgstr "답글"
 #: .\service\models.py:113
 msgid "Replies"
 msgstr "답글"
+
+#: .\templates\base.html:30
+msgid ""
+"The browser you are viewing is not supported at this time. Please update to "
+"the latest browser!"
+msgstr ""
+"현재보고있는 브라우저는 지원되지 않습니다. 최신 브라우저로 업데이트하십시오!"
+
+#: .\templates\base.html:72
+msgid "Education"
+msgstr "교육"
+
+#: .\templates\base.html:74
+msgid "Elementary School"
+msgstr "초등학교"
+
+#: .\templates\base.html:78 .\templates\base.html:86 .\templates\base.html:95
+msgid "Math"
+msgstr "수학"
+
+#: .\templates\base.html:79 .\templates\base.html:87 .\templates\base.html:96
+msgid "Science"
+msgstr "과학"
+
+#: .\templates\base.html:80 .\templates\base.html:89 .\templates\base.html:99
+#: .\templates\base.html:107 .\templates\base.html:122
+#: .\templates\base.html:130
+msgid "ETC"
+msgstr "기타"
+
+#: .\templates\base.html:83
+msgid "Middle School"
+msgstr "중학교"
+
+#: .\templates\base.html:92
+msgid "High School"
+msgstr "고등학교"
+
+#: .\templates\base.html:102
+msgid "General"
+msgstr "일반"
+
+#: .\templates\base.html:110
+msgid "Sky Castle"
+msgstr "스카이캐슬"
+
+#: .\templates\base.html:116 .\templates\base.html:129
+msgid "Travel"
+msgstr "여행"
+
+#: .\templates\base.html:118
+msgid "North America"
+msgstr "북 아메리카"
+
+#: .\templates\base.html:119
+msgid "South America"
+msgstr "남 아메라카"
+
+#: .\templates\base.html:120
+msgid "Europe"
+msgstr "유럽"
+
+#: .\templates\base.html:121
+msgid "Australia"
+msgstr "호주"
+
+#: .\templates\base.html:125
+msgid "Shopping"
+msgstr "쇼핑"
+
+#: .\templates\base.html:127
+msgid "Accessories"
+msgstr "호주"
+
+#: .\templates\base.html:128
+msgid "Shoes"
+msgstr "신발"
+
+#: .\templates\base.html:133
+msgid "Game"
+msgstr "게임"
+
+#: .\templates\base.html:134
+msgid "Fitness"
+msgstr "운동"
+
+#: .\templates\base.html:136
+msgid "Favorites"
+msgstr "즐겨찾기"
+
+#: .\templates\base.html:138 .\templates\base.html:175
+msgid "Service center"
+msgstr "고객센터"
+
+#: .\templates\base.html:141
+msgid "Inquiry"
+msgstr "문의사항"
+
+#: .\templates\base.html:142
+msgid "Vod support"
+msgstr "방송지원"
+
+#: .\templates\base.html:169
+msgid "Site help"
+msgstr "사이트 도움말"
+
+#: .\templates\base.html:170
+msgid "Site Terms of Use"
+msgstr "사이트 이용약관"
+
+#: .\templates\base.html:171
+msgid "Site Rules"
+msgstr "사이트 운영규칙"
+
+#: .\templates\base.html:172
+msgid "Privacy Statement"
+msgstr "개인정보 취급 방침"
+
+#: .\templates\base.html:173
+msgid "Limitation of Liability and Legal Notice"
+msgstr "책임의 한계와 법적고지"
+
+#: .\templates\base.html:174
+msgid "Takedown Request Service"
+msgstr "게시중단 요청 서비스"
+
+#: .\templates\main.html:25
+msgid "Popular vod"
+msgstr "인기 영상"
+
+#: .\templates\main.html:158
+msgid "Deo vod"
+msgstr "데모 영상"
+
+#: .\templates\notice\notice_list.html:6 .\templates\transfer.html:4
+msgid "test"
+msgstr "테스트"
+
+#: .\templates\transfer.html:5
+msgid " test1 </br> test2 </br> test3 "
+msgstr "테스트1 </br> 테스트2 </br> 테스트3"
 
 #: .\user\forms.py:11
 msgid "The two password fields didn't match."

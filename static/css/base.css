@@ -138,22 +138,35 @@ input#sidebar {
   display: none;
 }
 
-.sidemenu {
-  padding-left: 50px;
-}
-
-.headmenu_sidebar img{
+#hamberger{
    width: 40px;
    vertical-align:middle;
    cursor: pointer;
 }
 
+#profile{
+   width: 40px;
+   height: 35px;
+   vertical-align:middle;
+   cursor: pointer;
+}
+
+#favorites{
+   width: 35px;
+   height: 35px;
+   vertical-align:middle;
+   cursor: pointer;
+}
+
+.headmenu_sidebar aside a{
+    margin-right: 15px;
+}
 /*사이드바 틀*/
 .side_content {
   position: fixed;
   top: 0;
   left: -300px;
-  width: 150px;
+  width: 180px;
   height: 1500px;
   background: #fff;
   transition: all .35s;
@@ -247,10 +260,10 @@ input#sidebar:checked ~ .sidebackground {opacity: 1; visibility: visible;}
 
 /*카테고리 text style*/
 .category1 {font-size: 20px;}
-.category2 {font-size: 15px; }
-.category3 {font-size: 15px;}
-.sub1 {font-size: 15px;}
-.sub {font-size: 15px;}
+.category2 {font-size: 18px; }
+.category3 {font-size: 18px;}
+.sub1 {font-size: 18px;}
+.sub {font-size: 18px;}
 
 /*첫번째 메뉴 닫쳐있는 상태로 표시 (side_design 와 submenu사이에 spacebar로 해결)*/
 /*위아래로 effect*/

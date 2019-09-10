@@ -90,7 +90,7 @@ node1 =get(node.pk).add_child(name='Middle School', name_ko='중학교')
 get(node1.pk).add_child(name='English', name_ko='영어')  
 get(node1.pk).add_child(name='Korean', name_ko='한국어')
 get(node1.pk).add_child(name='Math', name_ko='수학')  
-get(node1.pk).add_child(name='Science', name_ko='과핟')  
+get(node1.pk).add_child(name='Science', name_ko='과학')  
 get(node1.pk).add_child(name='SSAT')  
 get(node1.pk).add_child(name='ETC')
 
@@ -110,6 +110,8 @@ get(node1.pk).add_child(name='TEPS', name_ko='텝스')
 get(node1.pk).add_child(name='Sky Castle', name_ko='스카이 캐슬')    
 get(node1.pk).add_child(name='ETC', name_ko='기타')  
 
+node1 = get(node.pk).add_child(name='Sky Castle', name_ko='스카이 캐슬')  
+
 node = get(root.pk).add_child(name='Travel', name_ko='여행')   
 get(node.pk).add_child(name='North America', name_ko='북아메리카')  
 get(node.pk).add_child(name='South America', name_ko='남아메리카')  
@@ -122,7 +124,8 @@ get(node.pk).add_child(name='Accessories', name_ko='악세사지')
 get(node.pk).add_child(name='Shoes', name_ko='신발')  
 get(node.pk).add_child(name='ETC', name_ko='기타')
  ```
- 
+ node = get(root.pk).add_child(name='Game', name_ko='게임') 
+ node = get(root.pk).add_child(name='Fitness', name_ko='운동')     
  
 ## 라이브러리 변경
 ```

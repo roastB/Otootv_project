@@ -40,6 +40,7 @@ urlpatterns += i18n_patterns(
     url('subscribe_1/', views.subscribe_1View.as_view(), name='subscribe_1'),
     url('subscribe_2/', views.subscribe_2View.as_view(), name='subscribe_2'),
     url('subscribe_3/', views.subscribe_3View.as_view(), name='subscribe_3'),
+
     url('creator/', views.creatorView.as_view(), name='creator'),
     url('channel/', views.channelView.as_view(), name='channel'),
     url('video/', views.videoView.as_view(), name='video'),

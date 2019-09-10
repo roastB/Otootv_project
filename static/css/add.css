@@ -109,6 +109,12 @@ textarea {
       background-color: #ddd;
   }
 
+
+
+  .inquiry_detail {
+    padding: 40px 40px 40px 40px;
+  }
+
   .write {
       margin-left: 15px;
       font-size: 25px;

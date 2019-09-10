@@ -1,6 +1,6 @@
 <!DOCTYPE html>
+{% load i18n %}
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}O2TV{% endblock %}</title>
@@ -17,17 +17,17 @@
 
 
     <!-- 파비콘 -->
-    <link rel="icon" href="icon/o2-16.png" sizes="16x16">
-    <link rel="icon" href="icon/o2-32.png" sizes="32x32">
-    <link rel="icon" href="icon/o2-64.png" sizes="64x64">
-    <link rel="icon" href="icon/o2-128.png" sizes="128x128">
+    <link rel="icon" href="{% static 'icon/o2-16.png' %}" sizes="16x16">
+    <link rel="icon" href="{% static 'icon/o2-32.png' %}" sizes="32x32">
+    <link rel="icon" href="{% static 'icon/o2-64.png' %}" sizes="64x64">
+    <link rel="icon" href="{% static 'icon/o2-128.png' %}" sizes="128x128">
 
 
     <!-- HTLM5shiv ie6~8 -->
     <!--[if lt IE 9]>
     <script src="{% static 'js/html5shiv.min.js'%}"></script>
     <script type="text/javascript">
-        alert("현재 당신이 보는 브라우저는 지원하지 않습니다. 최신 브라우저로 업데이트해주세요!");
+        alert({% trans "The browser you are viewing is not supported at this time. Please update to the latest browser!" %});
      </script>
     <![endif]-->
     {% block head %}{% endblock %}
@@ -46,7 +46,7 @@
         </div>
 
         <div class="headmenu_searchbar">
-            <input type="text" class="searchTerm" placeholder="What are you looking for?">
+            <input type="text" class="searchTerm">
             <button type="submit" class="searchButton">
                 <i class="fa fa-search"></i>
             </button>
@@ -54,11 +54,14 @@
         <!------------------------------------
                     side br (aside부분)
          ------------------------------------->
+
         <input type="checkbox" id="sidebar">
         <div class="headmenu_sidebar">
             <aside>
+                <a href="{% url 'account' %}"> <img id="profile" src="{% static 'img/default_profile_image.jpg'%}"  /></a>
+                <a href="#"> <img id="favorites" src="{% static 'icon/star.png'%}"  /></a>
                 <label for='sidebar' class='sidemenu'>
-                    <img src="{% static 'icon/hamberger.png'%}" alt="o2tv" />
+                    <img id='hamberger'  src="{% static 'icon/hamberger.png'%}" />
                 </label>
             </aside>
         </div>
@@ -66,81 +69,76 @@
             <div id="side_design">
                 <div class="submenu">
                     <ul>
-                        <li><a class="category1">교육</a>
+                        <li><a class="category1">{% trans "Education" %}</a>
                             <ul class="sub1">
-                                <li><a class="category2">초등</a>
+                                <li><a class="category2">{% trans "Elementary School" %}</a>
                                     <ul class="sub2">
-                                        <li><a href="{% url 'creator' %}" class="category3">언어</a></li>
-                                        <li><a href="#" class="category3">외국어</a></li>
-                                        <li><a href="#" class="category3">수학</a></li>
-                                        <li><a href="#" class="category3">과학</a></li>
-                                        <li><a href="#" class="category3">기타</a></li>
+                                        <li><a href="{% url 'creator' %}" class="category3">{% trans "English" %}</a></li>
+                                        <li><a href="#" class="category3">{% trans "Korean" %}</a></li>
+                                        <li><a href="#" class="category3">{% trans "Math" %}</a></li>
+                                        <li><a href="#" class="category3">{% trans "Science" %}</a></li>
+                                        <li><a href="#" class="category3">{% trans "ETC" %}</a></li>
                                     </ul>
                                 </li>
-                                <li><a class="category2">중등</a>
+                                <li><a class="category2">{% trans "Middle School" %}</a>
                                     <ul class="sub2">
-                                        <li><a href="#" class="category3">언어</a></li>
-                                        <li><a href="#" class="category3">외국어</a></li>
-                                        <li><a href="#" class="category3">수학</a></li>
-                                        <li><a href="#" class="category3">과학</a></li>
+                                        <li><a href="#" class="category3">{% trans "Korean" %}</a></li>
+                                        <li><a href="#" class="category3">{% trans "Math" %}</a></li>
+                                        <li><a href="#" class="category3">{% trans "Science" %}</a></li>
                                         <li><a href="#" class="category3">SSAT</a></li>
-                                        <li><a href="#" class="category3">기타</a></li>
+                                        <li><a href="#" class="category3">{% trans "ETC" %}</a></li>
                                     </ul>
                                 </li>
-                                <li><a class="category2">고등</a>
+                                <li><a class="category2">{% trans "High School" %}</a>
                                     <ul class="sub2">
-                                        <li><a href="#" class="category3">언어</a></li>
-                                        <li><a href="#" class="category3">외국어</a></li>
-                                        <li><a href="#" class="category3">수학</a></li>
-                                        <li><a href="#" class="category3">과학</a></li>
+                                        <li><a href="#" class="category3">{% trans "Korean" %}</a></li>
+                                        <li><a href="#" class="category3">{% trans "Math" %}</a></li>
+                                        <li><a href="#" class="category3">{% trans "Science" %}</a></li>
                                         <li><a href="#" class="category3">SAT</a></li>
                                         <li><a href="#" class="category3">ACT</a></li>
-                                        <li><a href="#" class="category3">기타</a></li>
+                                        <li><a href="#" class="category3">{% trans "ETC" %}</a></li>
                                     </ul>
                                 </li>
-                                <li><a class="category2">일반</a>
+                                <li><a class="category2">{% trans "General" %}</a>
                                     <ul class="sub2">
                                         <li><a href="#" class="category3">TOEIC</a></li>
                                         <li><a href="#" class="category3">TOEFL</a></li>
                                         <li><a href="#" class="category3">TEPS</a></li>
-                                        <li><a href="#" class="category3">기타</a></li>
+                                        <li><a href="#" class="category3">{% trans "ETC" %}</a></li>
                                     </ul>
                                 </li>
-                                <li><a class="category2">스카이케슬</a>
+                                <li><a class="category2">{% trans "Sky Castle" %}</a>
                                     <ul class="sub2">
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-                        <li><a class="category1">헬스</a>
+                        <li><a class="category1">{% trans "Travel" %}</a>
                             <ul class="sub1">
-                                <li><a href="#">SubMenu1</a></li>
-                                <li><a href="#">SubMenu2</a></li>
-                                <li><a href="#">SubMenu3</a></li>
+                                <li><a href="#", class="category2">{% trans "North America" %}</a></li>
+                                <li><a href="#", class="category2">{% trans "South America" %}</a></li>
+                                <li><a href="#", class="category2">{% trans "Europe" %}</a></li>
+                                <li><a href="#", class="category2">{% trans "Australia" %}</a></li>
+                                <li><a href="#" class="category2">{% trans "ETC" %}</a></li>
                             </ul>
                         </li>
-                        <li><a class="category1">여행</a>
+                        <li><a class="category1">{% trans "Shopping" %}</a>
                             <ul class="sub1">
-                                <li><a href="#">SubMenu1</a></li>
-                                <li><a href="#">SubMenu2</a></li>
-                                <li><a href="#">SubMenu3</a></li>
+                                <li><a href="#", class="category2">{% trans "Accessories" %}</a></li>
+                                <li><a href="#", class="category2">{% trans "Shoes" %}</a></li>
+                                <li><a href="#", class="category2">{% trans "Travel" %}</a></li>
+                                <li><a href="#" class="category2">{% trans "ETC" %}</a></li>
                             </ul>
                         </li>
-                        <li><a class="category1">쇼핑</a>
+                        <li><a class="category1">{% trans "Game" %}</a></li>
+                        <li><a class="category1">{% trans "Fitness" %}</a></li>
+
+                        <li><a class="category1", id="caca", href="{% url 'notice' %}">{% trans "Notice" %}</a></li>
+                        <li><a class="category1">{% trans "Service center" %}</a>
                             <ul class="sub1">
-                                <li><a href="#">SubMenu1</a></li>
-                                <li><a href="#">SubMenu2</a></li>
-                                <li><a href="#">SubMenu3</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="category1" , id="caca">즐겨찾기</a></li>
-                        <li><a class="category1" href="{% url 'account' %}">마이페이지</a></li>
-                        <li><a class="category1", href="{% url 'notice' %}">공지사항</a></li>
-                        <li><a class="category1">고객센터</a>
-                            <ul class="sub1">
-                                <li><a  href="{% url 'help' %}">도움말</a></li>
-                                <li><a  href="{% url 'inquiry' %}">문의게시판</a></li>
-                                <li><a href="#">방송지원</a></li>
+                                <li><a  href="{% url 'help' %}">{% trans "Help" %}</a></li>
+                                <li><a  href="{% url 'inquiry' %}">{% trans "Inquiry" %}</a></li>
+                                <li><a href="#">{% trans "Vod support" %}</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -167,13 +165,13 @@
     <div class="containerfooter">
         <div class="footer">
             <ul>
-                <li><a href="#">사이트 도움말</a></li>
-                <li><a href="#">사이트 이용약관</a></li>
-                <li><a href="#">사이트 운영규칙</a></li>
-                <li><a href="#"><strong>개인정보취급방침</strong></a></li>
-                <li><a href="#">책임의 한계와 법적고지</a></li>
-                <li><a href="#">게시중단요청 서비스</a></li>
-                <li><a href="#">고객센터</a></li>
+                <li><a href="#">{% trans "Site help" %}</a></li>
+                <li><a href="#">{% trans "Site Terms of Use" %}</a></li>
+                <li><a href="#">{% trans "Site Rules" %}</a></li>
+                <li><a href="#">{% trans "Privacy Statement" %}</a></li>
+                <li><a href="#">{% trans "Limitation of Liability and Legal Notice" %}</a></li>
+                 <li><a href="#">{% trans "Takedown Request Service" %}</a></li>
+                <li><a href="#">{% trans "Service center" %}</a></li>
             </ul>
             <address>
                 &copy; COPYRIGHT TO OTOOTV

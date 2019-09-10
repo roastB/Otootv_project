@@ -2,17 +2,17 @@
 {% block title %}O2TV{% endblock %}
 {% load staticfiles %}
 {% block extrastyle %}{% static "css/add.css"%}{% endblock %}
-{% block content %}
 
- <section>
-    <div style="margin: 35px">
+
+{% block content %}
+<section>
+    <div class="inquiry_detail">
         <a href="#write" class="write" style="text-decoration: none;">제목</a>
         <hr>
         <p class="question_contents">
-            문의사항에 글을 작성하고 
+            문의사항에 글을 작성하고
             글을 보기 위해 눌렀을 경우 이런 형식으로 나타납니다.
-            참고해주시기 바랍니다.
-        </p>
+            참고해주시기 바랍니다.</p>
         <br>
         <a href="#write" class="write" style="text-decoration: none;">답변</a>
         <hr>
@@ -32,7 +32,7 @@
                 <i class="fa fa-angle-down" aria-hidden="true" id="next"></i>
                 다음 글
             </a>
-        </div>         
+        </div>
         <br>
         <div style="float: right; width: 500px;">
             <a>날짜: 2019.00.00, </a>
@@ -46,4 +46,4 @@
         </div>
     </div>
 </section>
-  {% endblock content %}
+{% endblock content %}
